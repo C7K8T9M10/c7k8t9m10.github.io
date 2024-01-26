@@ -1,7 +1,14 @@
+ 
+
+# MY NEW PAGE IS AVALIABLE at [here](https://c7k8t9m10.github.io/firmkdocs/), GO and CHECK IT!!!!
+#                                                   NOW!!!!
+
+
 # After the storm
 I always want to bulid a page for myself, now I finally have one.  
 
-Let's see what will happen next.  
+Let's see what will happen next. 
+
 
 # About Myself
 I am a student in Zhejiang University, whose major is software engineering, expected to graduate in 2026.  
