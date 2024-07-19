@@ -1,0 +1,1427 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ICS 2023 Review Chap 9, Eddie Wong">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ICS 2023 Review Chap 9 | Eddie Wong</title>
+    <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Eddie Wong</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Eddie Wong</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ICS 2023 Review Chap 9</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ICS/">
+                                <span class="chip bg-color">ICS</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                                <span class="chip bg-color">计算机系统概论</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                课程笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-11-28
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    20 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Review-Chap-9"><a href="#Review-Chap-9" class="headerlink" title="Review Chap 9"></a>Review Chap 9</h1><h3 id="Privilege-Priority-and-the-Memory-Address-Space"><a href="#Privilege-Priority-and-the-Memory-Address-Space" class="headerlink" title="Privilege,Priority, and the Memory Address Space"></a>Privilege,Priority, and the Memory Address Space</h3><p><strong>Privilege</strong>: it is about the right to do something, such as execute a particular instruction or access a particular memory location.(<strong>NOTE:</strong> not all computer programs have the right to execute all instructions.)</p>
+<p>To make the system go correctly, we designate every computer system as either privileged or unprivileged. We often say supervisor privilege to indicate privileged. We say a program is executing in <strong>Supervisor</strong> mode to indicate <strong>privileged</strong>, or <strong>User</strong> mode to indicate <strong>unprivileged</strong>.</p>
+<ul>
+<li>If a program is executing in Supervisor mode, it can execute all instructions and access all of memory.</li>
+<li>If a program is executing in User mode, it cannot.</li>
+</ul>
+<p><strong>Priority</strong>: it is about the urgency of a program to execute. This allows programs of greater urgency to interrupt programs of lesser urgency.</p>
+<p><strong>Two Orthogonal Notions</strong></p>
+<p>We said privilege and priority are two orthogonal notions, meaning they have nothing to do with each other.</p>
+<p><strong>The Processor Status Register</strong></p>
+<p>It contains the privilege and priority assigned to that program.</p>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled.png" alt="Untitled"></p>
+<p>Bit 15 specifies the privilege, where <strong>PSR[15]&#x3D;0 means supervisor privilege, and PSR[15]&#x3D;1 means unprivileged</strong>. Bits[10:8] specify the priority level of the program. The highest level is 7 and the lowest level is 0. Besides, it also contains the condition code.</p>
+<p><strong>Organization of Memory</strong></p>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>Locations x0000 to x2FFF are privileged memory locations. They contain the various data structures and code of the operating system. They require supervisor privilege to access. They are referred to as <strong>system space</strong>.</li>
+<li><strong>Supervisor Stack</strong> is controlled by the operating system and requires <strong>supervisor</strong> privilege to access. It has a stack pointer called <strong>SSP</strong> (Supervisor Stack Pointer).</li>
+<li>Locations x3000 to xFDFF are unprivileged memory locations. Supervisor privilege is not required to access these memory locations. All user programs and data use this region of memory. The region is often referred to as <strong>user space</strong>.</li>
+<li><strong>User Stack</strong> is controlled by the user program and does <strong>not require privilege</strong> to access. It has a stack pointer called <strong>USP</strong> (User Stack Pointer).</li>
+<li>Addresses xFE00 to xFFFF do not correspond to memory locations at all. That is, the last address of a memory location is xFDFF. Addresses xFE00 to xFFFF are used to identify registers that take part in input and output functions and some special registers associated with the processor.</li>
+<li>PSR ~ xFFFC</li>
+<li>processor’s <strong>M</strong>aster <strong>C</strong>ontrol <strong>R</strong>egister (<strong>MCR</strong>)(clock cycle switch) ~ xFFFE</li>
+<li><strong>KBSR</strong> <strong>KBDR</strong> <strong>DSR</strong> <strong>DDR</strong> …</li>
+<li>这些并不是实际内存，而是别映射过来的 <strong>Memory-mapped I&#x2F;O</strong> ！</li>
+<li>Since a program can only execute in <strong>Supervisor</strong> mode or <strong>User</strong> mode at any one time, only <strong>one</strong> of the two stacks is active at any one time.</li>
+<li><strong>R6</strong> is generally used as the <strong>SP</strong> for the active stack. Two registers, <strong>Saved_SSP</strong> and <strong>Saved_USP</strong>, are provided to save the <strong>SP</strong> not in use. When privilege changes, for example, from <strong>Supervisor</strong> mode to <strong>User</strong> mode, the <strong>SP</strong> is stored in <strong>Saved_SSP</strong>, and the <strong>SP</strong> is loaded from <strong>Saved_USP</strong>.</li>
+</ul>
+<h3 id="Input-Output"><a href="#Input-Output" class="headerlink" title="Input&#x2F;Output"></a><strong>Input</strong>&#x2F;<strong>Output</strong></h3><ul>
+<li>Even the simplest I&#x2F;O devices usually need at least <strong>two</strong> registers: one to hold the <strong>data</strong> being transferred between the device and the computer, and one to indicate <strong>status information</strong> about the device.</li>
+<li>An example of status information is whether the device is <strong>available</strong> or is it still <strong>busy</strong> processing the most recent I&#x2F;O task.</li>
+<li>Some Basic <strong>Characteristics</strong> of I&#x2F;O</li>
+</ul>
+<p><strong>Memory-Mapped I&#x2F;O</strong> vs. <strong>Special I&#x2F;O Instructions</strong></p>
+<ul>
+<li>The I&#x2F;O device registers are mapped to a set of addresses that are allocated to I&#x2F;O device registers rather than to memory locations. Hence the name <strong>memory-mapped I&#x2F;O</strong>.</li>
+<li>Special I&#x2F;O Instructions are not so liked.</li>
+</ul>
+<p><strong>Asynchronous</strong> vs. <strong>Synchronous</strong></p>
+<ul>
+<li>Most I&#x2F;O is carried out at speeds very much <strong>slower</strong> than the speed of the processor.</li>
+<li>The point is that I&#x2F;O devices usually operate at speeds very different from that of a microprocessor, and not in lockstep. We call this latter characteristic <strong>asynchronous</strong>. Most interaction between a processor and I&#x2F;O is asynchronous.</li>
+<li>To control processing in an asynchronous world requires some <strong>protocol</strong> or <strong>handshaking mechanism</strong>. So it is with our keyboard and monitor.</li>
+<li>In the case of the keyboard, we will need a one-bit status register, called a <strong>flag</strong>, to indicate if someone has or has not typed a character.</li>
+<li>In the case of the monitor, we will need a one-bit status <strong>register</strong> to indicate whether or not the most recent character sent to the monitor has been displayed, and so the monitor can be given another character to display.</li>
+<li>These flags are the simplest form of <strong>synchronization</strong>.</li>
+<li>By examining the <strong>ready bit</strong> before reading a character, the computer can tell whether it has already read the last character typed.</li>
+</ul>
+<p><strong>Interrupt-Driven</strong> vs. <strong>Polling</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.javatpoint.com/trap-vs-interrupt-in-operating-system">🔗</a> Difference between an interrupt and a trap.</li>
+<li>The processor, which is computing, and the typist, who is typing, are two <strong>separate</strong> entities.</li>
+<li>The issue of <strong>interrupt-driven</strong> vs. <strong>polling</strong> is the issue of who controls the interaction.</li>
+<li><strong>Interrupt-driven</strong> acts like that the typist will tell the processor that there are some inputs.</li>
+<li><strong>Polling</strong> acts like that the processor will interrogate typist again and again whether there have some inputs.</li>
+<li>中断是每当监控的设备发生变化，比如有输入的时候，就执行中断相关的代码片段；而轮询是指你主动去不断请求，检测监控的设备是否发生变化。</li>
+</ul>
+<h3 id="Input-from-the-Keyboard"><a href="#Input-from-the-Keyboard" class="headerlink" title="Input from the Keyboard"></a>Input from the Keyboard</h3><p>Basic Input Registers (<strong>KBDR</strong> and <strong>KBSR</strong>): <strong>KBD</strong>ata<strong>R</strong> &amp; <strong>KBS</strong>tatus<strong>R</strong></p>
+<ul>
+<li>In the case of <strong>KBDR</strong>, bits [7:0] are used for the <strong>data</strong>, and bits [15:8] contain <strong><code>x00</code></strong>.</li>
+<li>In the case of <strong>KBSR</strong>, bit [15] contains the synchronization mechanism, that is, the ready bit; and bit[14] is the interrupt enable bit, depending on whether or not the processor wants to give the I&#x2F;O device the right to <strong>request service</strong>.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202114753-8d54fc36-b428-4df3-9d29-c9dd39be0894.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202114753-8d54fc36-b428-4df3-9d29-c9dd39be0894.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>In LC-3, address <strong><code>xFE02</code></strong> is assigned to the <strong>KBDR</strong>; address <strong><code>xFE00</code></strong> is assigned to the <strong>KBSR</strong>.</li>
+</ul>
+<p>The Basic <strong>Input Service Routine</strong></p>
+<ul>
+<li>When type in something, <strong>KBDR</strong> is updated and <strong>KBSR</strong> is set to<code>1</code>. And <strong>KBDR</strong> can’t be changed until <strong>KBSR</strong> is reset and the data in <strong>KBDR</strong> is read. So that each character can be loaded at least one time.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1663250915942-f266facd-a29d-4782-8ae5-45eef8dec8e4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1663250915942-f266facd-a29d-4782-8ae5-45eef8dec8e4.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_12%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202521661-df28eac7-1015-4b08-94dc-f6cf5d702098.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_27,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202521661-df28eac7-1015-4b08-94dc-f6cf5d702098.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_27%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>Implementation of Memory-Mapped Input</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202840874-c88d4ccf-97ac-448a-9198-b5f86ffb8c53.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202840874-c88d4ccf-97ac-448a-9198-b5f86ffb8c53.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_35%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<h3 id="Output-to-the-Monitor-In-fact-very-similar-to-the-input"><a href="#Output-to-the-Monitor-In-fact-very-similar-to-the-input" class="headerlink" title="Output to the Monitor(In fact very similar to the input)"></a>Output to the Monitor(In fact very similar to the input)</h3><p>DDR and DSR replace KBDR and KBSR.</p>
+<ul>
+<li>In the case of <strong>DDR</strong>, bits [7:0] are used for data, and bits [15:8] contain <strong><code>x00</code></strong>.</li>
+<li>In the case of <strong>DSR</strong>, bit [15] contains the synchronization mechanism, that is, the ready bit.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202935420-229bae47-be40-4e58-bb94-286e192a3cfb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202935420-229bae47-be40-4e58-bb94-286e192a3cfb.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>In LC-3, address <strong><code>xFE06</code></strong> is assigned to the <strong>DDR</strong>; address <strong><code>xFE04</code></strong> is assigned to the <strong>DSR</strong>.</li>
+</ul>
+<p>The Basic Output Service Routine</p>
+<ul>
+<li>When display something, <strong>DDR</strong> is updated and <strong>DSR</strong> is cleared. And <strong>DDR</strong> can’t be changed until <strong>DSR</strong> is set to <code>1</code> and the data in <strong>DDR</strong> is printed.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658203122513-1181fcb5-6e1f-4595-b41a-1a6c6b0159ff.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_32,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658203122513-1181fcb5-6e1f-4595-b41a-1a6c6b0159ff.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_32%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p>Implementation of Memory-Mapped Output</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658203253977-22ace587-a16b-48c9-a471-e64ff8c57ec8.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658203253977-22ace587-a16b-48c9-a471-e64ff8c57ec8.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled%202.png" alt="Untitled"></p>
+<h3 id="Operating-System-Service-Routines-LC-3-Trap-Routines"><a href="#Operating-System-Service-Routines-LC-3-Trap-Routines" class="headerlink" title="Operating System Service Routines (LC-3 Trap Routines)"></a>Operating System Service Routines (LC-3 Trap Routines)</h3><ul>
+<li>In general it is ill-advised to give user programmers access to these registers. That is why the addresses of hardware registers are part of the privileged memory address space and accessible only to programs that have supervisor privilege.</li>
+<li>The simpler solution, as well as the safer solution to the problem of user programs requiring I&#x2F;O, involves the**<code>TRAP</code>** instruction and the operating system, which of course has supervisor privilege.</li>
+<li>It (<strong><code>TRAP</code></strong>) allows the user programmer to not have to know the gory details of I&#x2F;O discussed earlier in this chapter. In addition, it protects user programs from the consequences of other inept user programmers.</li>
+<li>The user program uses the <strong><code>TRAP</code></strong> instruction to request the operating system to perform the task on behalf of the user program. The operating system takes control of the computer, handles the request specified by the <strong><code>TRAP</code></strong> instruction, and then returns control back to the user program at location <code>x4001</code>. As we said at the start of this chapter, we usually refer to the request made by the user program as a <strong>system call</strong> or a <strong>service call</strong>.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658290174311-dc463c14-710d-49e8-8e28-5684c506a62e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658290174311-dc463c14-710d-49e8-8e28-5684c506a62e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><strong>The Trap Mechanism</strong></p>
+<ul>
+<li><strong>A set of service routines</strong> executed on behalf of user programs by the operating system. These are part of the operating system and start at arbitrary addresses in system space. The LC-3 was designed so that up to 256 service routines can be specified. Table A.2 in Appendix A contains the LC-3’s current complete list of operating system service routines.</li>
+<li><strong>A table of the starting addresses</strong> of these 256 service routines. This table is stored in memory locations x0000 to x00FF. The table is referred to by various names by various companies. One company calls this table the System Control Block. Another company calls it the Trap Vector Table. Figure 9.10 shows the Trap Vector Table of the LC-3, with specific starting addresses highlighted. Among the starting addresses are the one for the character output service routine (memory location x0420), which is stored in memory location x0021, the one for the keyboard input service routine (location x04A0), stored in location x0023, and the one for the machine halt service routine (location x0520), stored in location x0025.</li>
+<li><strong>The <code>TRAP</code> instruction</strong>. When a user program wishes to have the operating system execute a specific service routine on behalf of the user program, and then return control to the user program, the user program uses the TRAP instruction.</li>
+<li><strong>A linkage</strong> back to the user program. The service routine must have a mechanism for returning control to the user program.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658292177168-67358cc1-7bcc-4dc1-b6ca-fee7665db839.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658292177168-67358cc1-7bcc-4dc1-b6ca-fee7665db839.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_10%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><strong>The TRAP Instruction</strong></p>
+<ul>
+<li>The TRAP instruction causes the service routine to execute by:</li>
+</ul>
+<ol>
+<li>changing the <strong><code>PC</code></strong> to the starting address of the relevant service routine on the basis of its <strong>trap vector</strong>;</li>
+<li>providing a way to get back to the program that executed the <strong><code>TRAP</code></strong> instruction. The “way back” is referred to as a <strong>linkage</strong>;</li>
+</ol>
+<ul>
+<li>As you know, the <strong><code>TRAP</code></strong> instruction is made up of two parts: the <strong><code>TRAP</code></strong> opcode 1111 and the <strong>trap vector</strong> (bits [7:0]), which identifies the service routine the user program wants the operating system to execute on its behalf. Bits [11:8] must be zero.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658292696904-1ad69603-924c-41f3-a225-6a340486d062.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_24,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658292696904-1ad69603-924c-41f3-a225-6a340486d062.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_24%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>The EXECUTE phase of the TRAP instruction’s instruction cycle does three things:</li>
+</ul>
+<ol>
+<li>The <strong>PSR</strong> and <strong>PC</strong> are both pushed onto the system stack. Since the PC was incremented during the FETCH phase of the TRAP instruction’s instruction cycle, the <strong>return linkage</strong> is automatically saved in the <strong>PC</strong>. When control returns to the user program, the <strong>PC</strong> will automatically be pointing to the instruction following the TRAP instruction. Note that the program requesting the trap service routine can be running either in <strong>Supervisor</strong> mode or in <strong>User</strong> mode. If in User mode, R6, the stack pointer, is pointing to the user stack. Before the <strong>PSR</strong> and <strong>PC</strong> can be pushed onto the system stack, the current contents of R6 must be stored in Saved <strong>USP</strong>, and the contents of Saved <strong>SSP</strong> loaded into R6.</li>
+<li>PSR[15] is set to 0, since the service routine is going to require supervisor privilege to execute. PSR[10:8] are left unchanged since the priority of the TRAP routine is the same as the priority of the program that requested it.</li>
+<li>The 8-bit trap vector is zero-extended to 16 bits to form an address that corresponds to a location in the <strong>Trap Vector Table</strong>. For the trap vector x23, that address is x0023. Memory location x0023 contains x04A0, the starting address of the TRAP x23 service routine. The PC is loaded with x04A0, completing the instruction cycle.</li>
+</ol>
+<ul>
+<li>The <strong><code>RTI</code></strong> Instruction: To Return Control to the Calling Program</li>
+<li>The <strong><code>RTI</code></strong> instruction (opcode &#x3D; 1000, with no operands) pops the top two values on the system stack into the <strong>PC</strong> and <strong>PSR</strong>. Since the <strong>PC</strong> contains the address following the address of the TRAP instruction, control returns to the user program at the correct address.</li>
+<li>Finally, once the <strong>PSR</strong> has been popped off the system stack, **<code>PSR[15]</code>**must be examined to see whether the processor was running in <strong>User</strong> mode or <strong>Supervisor</strong> mode when the TRAP instruction was executed.</li>
+</ul>
+<p>Trap Routines for Handling I&#x2F;O</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658369283680-182086d8-2a9d-49b2-870b-f7c42c1a68d2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658369283680-182086d8-2a9d-49b2-870b-f7c42c1a68d2.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_13%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658369308415-c0c6ccd0-c934-44ce-85ae-be317bdca8d1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658369308415-c0c6ccd0-c934-44ce-85ae-be317bdca8d1.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>A Trap Routine for Halting the Computer</li>
+</ul>
+<h3 id="Interrupts-and-Interrupt-Driven-I-O"><a href="#Interrupts-and-Interrupt-Driven-I-O" class="headerlink" title="Interrupts and Interrupt-Driven I&#x2F;O"></a>Interrupts and Interrupt-Driven I&#x2F;O</h3><p>The essence of interrupt-driven I&#x2F;O is the notion that an I&#x2F;O device that may or may not have anything to do with the program that is running can(1) force the running program to stop,(2) have the processor execute a program that carries out the needs of the I&#x2F;O device, and then(3) have the stopped program resume execution as if nothing had happened.</p>
+<p>Interrupt-driven I&#x2F;O do not waste time during input and output, instead, it can do useful work until it is notified that some I&#x2F;O device needs attention.</p>
+<p><strong>Two parts to the process:</strong></p>
+<ul>
+<li>The mechanism that enables an I&#x2F;O device to interrupt the processor.</li>
+<li>The mechanism that handles the interrupt request.</li>
+</ul>
+<p><strong>Part I:</strong></p>
+<p><strong>Three things must be true to allow an I&#x2F;O device to interrupt the running program:</strong></p>
+<ol>
+<li>The I&#x2F;O device <strong>must want</strong> service: Check the ready bit in KBSR or DSR to confirm.</li>
+<li>The device <strong>must have the right</strong> to request the service: that is the interrupt enable (IE) bit. In KBSR and DSR it is in bit[14]. The i<strong>nterrupt request signal from the I&#x2F;O device</strong> is the logical AND of the IE bit and the ready bit.</li>
+</ol>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled%203.png" alt="Untitled"></p>
+<ol>
+<li>The device request <strong>must be more urgent</strong> than what the processor is currently doing: it means the priority of the request must be higher than the priority of the program it wishes to interrupt.</li>
+</ol>
+<p><strong>The INT signal</strong></p>
+<p>To stop the processor from continuing execution of its currently running program and service an interrupt request, the INT signal must be asserted.</p>
+<p>The picture shows the status registers of several devices operating at various priority levels (PL). Any device that has bits [14] and [15] both set asserts its interrupt request signal. The interrupt request signals are input to a priority encoder, a combinational logic structure that selects the highest priority request from all those asserted. If the PL of that request is higher than the PL of the currently executing program, the INT signal is asserted.</p>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled%204.png" alt="Untitled"></p>
+<p>Finally, the test to enable the processor to stop and handle the interrupt. Recall from Chapter 4 that the instruction cycle continually sequences through the phases of the instruction cycle (FETCH, DECODE, EVALUATE ADDRESS, FETCH OPERAND, EXECUTE, and STORE RESULT). Each instruction changes the state of the computer, and that change is completed at the end of the instruction cycle for that instruction. That is, in the last clock cycle before the computer returns to the FETCH phase for the next instruction, the computer is put in the state caused by the complete execution of the current instruction.<br>Interrupts can happen at any time. They are asynchronous to the synchronous finite-state machine controlling the computer. For example, the interrupt signal could occur when the instruction cycle is in its FETCH OPERAND phase. If we stopped the currently executing program when the instruction cycle was in its FETCH OPERAND phase, we would have to keep track of what part of the current instruction has executed and what part of the current instruction still has work to do. It makes much more sense to ignore interrupt signals except when we are at an instruction boundary; that is, the current instruction has completed, and the next instruction has not yet started. Doing that means we do not have to worry about partially executed instructions, since the state of the computer is the state created by the completion of the current instruction, period!<br>The additional logic to test for the interrupt signal is to augment the last state of the instruction cycle for each instruction with a test. Instead of always going from the last state of one instruction cycle to the first state of the FETCH phase of the next instruction, the next state depends on the INT signal. If INT is not asserted, then it is business as usual, with the control unit returning to the FETCH phase to start processing the next instruction. If INT is asserted, then the next state is the first state of Part II, handling the interrupt request.</p>
+<p><strong>Part II:</strong></p>
+<p>Handling the interrupt goes through 3 stages:</p>
+<ol>
+<li>Initiate the interrupt.</li>
+<li>Service the interrupt.</li>
+<li>Return from the interrupt.</li>
+</ol>
+<p>First: Initiate</p>
+<p>There are two things to do:</p>
+<ol>
+<li>Save the state of the interrupted program: The first step is to save enough of the state of the program that is running so that it can continue where it left off after the I&#x2F;O device request has been satisfied. That means storing current PC and PSR(These are the only state information LC-3 need to store during the execution).They are saved on the supervisor stack in the same way that PC and PSR are saved when a TRAP instruction is executed.</li>
+<li>Load the state of the interrupt service routine:</li>
+</ol>
+<p>Once the state of the interrupted program has been safely saved on the supervisor stack, the second step is to load the PC and PSR of the interrupt service routine. Interrupt service routines are similar to the trap service routines we have already discussed. They are program fragments stored in system space. They service interrupt requests.</p>
+<p>Most processors use the mechanism of vectored interrupts. You are familiar with this notion from your study of the trap vector contained in the TRAP instruction. In the case of interrupts, the eight-bit vector is provided by the device that is requesting the processor be interrupted. That is, the I&#x2F;O device transmits to the processor an eight-bit interrupt vector along with its interrupt request signal and its priority level. The interrupt vector corresponding to the highest priority interrupt request is the one supplied to the processor. It is designated INTV.</p>
+<p>If the interrupt is taken, the processor expands the 8-bit interrupt vector (INTV) to form a 16-bit address, which is an entry into the Interrupt Vector Table. You know that the Trap Vector Table consists of memory locations x0000 to x00FF, each containing the starting address of a trap service routine. The Interrupt Vector Table consists of memory locations x0100 to x01FF, each containing the starting address of an interrupt service routine. The processor loads the PC with the contents of the location in the Interrupt Vector Table corresponding to the address formed by expanding the interrupt vector INTV.</p>
+<p>The PSR is loaded as follows: Since no instructions in the service routine have yet executed, PSR[2:0] contains no meaningful information. We arbitrarily load it initially with 010. Since the interrupt service routine runs in privileged mode, PSR[15] is set to 0. PSR[10:8] is set to the priority level associated with the interrupt request.</p>
+<p>This completes the initiation phase, and the interrupt service routine is ready to execute.</p>
+<p>Second: Service(OMIT)</p>
+<p>Finally: Return</p>
+<p>The last instruction in every interrupt service routine is RTI, which stands for “return from trap or interrupt”. When the processor finally accesses the RTI instruction, all the requirements of the I&#x2F;O device have been taken care of.</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ICS/">
+                                    <span class="chip bg-color">ICS</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                                    <span class="chip bg-color">计算机系统概论</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/12/01/Other%20Things%20You%20Need%20to%20Know%20to%20Pass%20the%20Exam%205d8b87e58f4949f4a863c2517980f023/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Other Things You Need to Know to Pass the Exam">
+                        
+                        <span class="card-title">Other Things You Need to Know to Pass the Exam</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            如何通过计概期末考
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-12-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    课程笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ICS/">
+                        <span class="chip bg-color">ICS</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                        <span class="chip bg-color">计算机系统概论</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/11/20/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="ICS 2023 Review Chap 8">
+                        
+                        <span class="card-title">ICS 2023 Review Chap 8</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    课程笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ICS/">
+                        <span class="chip bg-color">ICS</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                        <span class="chip bg-color">计算机系统概论</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Eddie Wong<br />'
+            + '文章作者: Eddie Wong<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="album"
+                   id="92937025"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024</span>
+            
+            <span id="year">2024</span>
+            <a href="/about" target="_blank">Eddie Wong</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/C7K8T9M10" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zjualexband@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2279739353" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2279739353" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/wang-zi-wen-82-66" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/wang-zi-wen-82-66" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
