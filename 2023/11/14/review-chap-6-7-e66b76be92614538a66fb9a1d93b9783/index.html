@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ICS 2023 Review Appendix C, Eddie Wong">
+    <meta name="keywords" content="ICS 2023 Review Chap 6&amp;7, Eddie Wong">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ICS 2023 Review Appendix C | Eddie Wong</title>
+    <title>ICS 2023 Review Chap 6&amp;7 | Eddie Wong</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ICS 2023 Review Appendix C</h1>
+                    <h1 class="description center-align post-title">ICS 2023 Review Chap 6&amp;7</h1>
                 </div>
             </div>
         </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-12-03
+                    2023-11-14
                 </div>
                 
 
@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    82
+                    648
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -496,11 +496,63 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Review-Appendix-C"><a href="#Review-Appendix-C" class="headerlink" title="Review Appendix C"></a>Review Appendix C</h1><p>都说Appendix A和C是全书精华之精华，那还是要把Appendix C消化消化的，争取正式开学之前看完它。</p>
-<p>Two main component of a microachitecture: the data path, which contains all the components that actually process the instructions, and the control, which contains all the components that generate the set of control signals that are needed to control processing at each clock cycle.</p>
-<p><img src="/Review%20Appendix%20C%20cd9a0ed5b3cf4315b26d30684db02354/Untitled.png" alt="Untitled"></p>
-<p><img src="/Review%20Appendix%20C%20cd9a0ed5b3cf4315b26d30684db02354/Untitled%201.png" alt="Untitled"></p>
-<p><img src="/Review%20Appendix%20C%20cd9a0ed5b3cf4315b26d30684db02354/Untitled%202.png" alt="Untitled"></p>
+                <h1 id="Review-Chap-6-7"><a href="#Review-Chap-6-7" class="headerlink" title="Review Chap 6&amp;7"></a>Review Chap 6&amp;7</h1><p>Away from machine codes, we are going to talk about programming languages. There are high-level and low-level languages. High-level languages tend to be ISA independent.</p>
+<p>Assembly language is a low-level language. Low-level languages are ISA dependent. In fact, it is usually the case that each ISA has only one assembly language.</p>
+<ul>
+<li><em>Symbolic Addresses :</em> meaningful symbolic names to memory locations, such as SUM and PRODUCT, rather than use the memory locations’ 16-bit addresses. This makes it easier to differentiate which memory location is keeping track of a SUM and which memory location is keeping track of a PRODUCT.</li>
+</ul>
+<p>An Assembly Language Program</p>
+<ul>
+<li>The translation <strong>program</strong> is called an <strong>assembler</strong>, and the translation <strong>process</strong> is called <strong>assembly</strong>.</li>
+<li>In LC-3 ISA, an instruction in assembly language consists of four parts:</li>
+<li><code>Label Opcode Operands ; Comment</code></li>
+<li><em><strong>Label</strong> &amp; <strong>Comment</strong> are optional, <strong>Opcode</strong> &amp; <strong>Operands</strong> are <strong>mandatory</strong></em>.</li>
+</ul>
+<p><strong>Opcode</strong> &amp; <strong>Operands</strong></p>
+<ul>
+<li>The <strong>Opcode</strong> is a symbolic name for the opcode of the corresponding LC-3 instruction.</li>
+<li>The number of operands depends on the operation being performed.</li>
+<li>A literal value must contain a symbol identifying the representation base of the number. We use <code>#</code> for decimal, <code>x</code> for hexadecimal, and <code>b</code> for binary.</li>
+</ul>
+<p><strong>Labels</strong></p>
+<ul>
+<li>Labels are symbolic names that are used to <strong>identify memory locations</strong> that are referred to explicitly in the program.</li>
+<li>Label 实际上是给特定内存的一个 alias，因此你可以用它标记 instructions，也可以用它索引 data！</li>
+<li>In LC-3 assembly language, a label consists of from 1 to 20 <strong>alphanumeric characters</strong> (i.e., each character is a capital or lower-case letter of the English alphabet, or a decimal digit), starting with a letter of the alphabet except <strong>reserved words</strong>.</li>
+<li>There are two reasons for explicitly referring to a memory location:</li>
+</ul>
+<ol>
+<li>The location is the <strong>target</strong> of a <strong>branch</strong> instruction.</li>
+<li>The location contains a <strong>value</strong> that is <strong>loaded</strong> or <strong>stored</strong>.</li>
+</ol>
+<p><strong>Comments</strong></p>
+<ul>
+<li>The purpose of comments is to make the program more comprehensible to the human reader.</li>
+<li>It is important to make comments that provide additional insight and do not just restate the obvious.</li>
+<li>Another purpose of comments is to make the visual presentation of a program easier to understand.</li>
+</ul>
+<p><strong>Pseudo-Ops(Assembler Directives)</strong></p>
+<ul>
+<li>.ORIG: it tells the assembler where in memory to place the LC-3 program. e.g.: .ORIG x3000</li>
+<li>.FILL: it tells the assembler to set aside the next location in the program and initialize it with the value of the operand. The value can be either a number or a label.</li>
+<li>.BLKW: it tells the assembler to set aside some number of sequential memory locations(i.e., a BLocK of Words) in the program.</li>
+<li>.STRINGZ: it tells the assembler to initialize a sequence of n+1 memory locations.</li>
+</ul>
+<p>It would result in the assembler initializing locations <code>x3010</code> through <code>x301D</code> to the following values:</p>
+<p><img src="/Review%20Chap%206&7%20e66b76be92614538a66fb9a1d93b9783/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>.END: it tells the assembler it has reached the end of the program and need not even look at anything after it. (In fact, .END does not exist at the time of execution, it is simply a delimiter)</li>
+</ul>
+<h3 id="The-Assembly-Process"><a href="#The-Assembly-Process" class="headerlink" title="The Assembly Process"></a>The Assembly Process</h3><p>Introduction</p>
+<ul>
+<li>If you have available an LC-3 assembler, you can cause it to translate your assembly language program into a machine language program by executing an appropriate command. In the LC-3 assembler that is generally available via the web, that command is assemble, and it requires as an argument the filename of your assembly language program.</li>
+<li>eg: <code>assemble solution1.asm outfile</code></li>
+</ul>
+<p>A Two-Pass Process</p>
+<ul>
+<li>The objective of the first pass is to <strong>identify</strong> the actual binary <strong>addresses</strong> corresponding to the symbolic names (or <strong>labels</strong>). This set of correspondences is known as the <strong>symbol table</strong>.</li>
+<li>In pass 1, we <strong>construct</strong> the <strong>symbol table</strong>. In pass 2, we <strong>translate</strong> the individual <strong>assembly language instructions</strong> into their corresponding <strong>machine language instructions</strong>.</li>
+</ul>
 
                 
             </div>
@@ -678,6 +730,28 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk5NC8zNjQ1Nw==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
 
@@ -694,13 +768,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/04/08/kq/">
+                <a href="/2023/11/20/review-chap-8-4f43e889765545ecb6d7554902d57891/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="看球日记1：双红会">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="ICS 2023 Review Chap 8">
                         
-                        <span class="card-title">看球日记1：双红会</span>
+                        <span class="card-title">ICS 2023 Review Chap 8</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -711,12 +785,16 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-20
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Eddie Wong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    课程笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -724,12 +802,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%9C%8B%E7%90%83/">
-                        <span class="chip bg-color">看球</span>
+                    <a href="/tags/ICS/">
+                        <span class="chip bg-color">ICS</span>
                     </a>
                     
-                    <a href="/tags/%E6%97%A5%E8%AE%B0/">
-                        <span class="chip bg-color">日记</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                        <span class="chip bg-color">计算机系统概论</span>
                     </a>
                     
                 </div>
@@ -743,13 +821,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/12/02/ICS%202023%20Review%20Chap%201%202f9e9fc7a6224dbcb7db7a95853e3bcf/">
+                <a href="/2023/11/11/review-chap-5-ddcbb3165ab44277adc7d7cbc629f81c/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ICS 2023 Review Chap 1">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="ICS 2023 Review Chap 5">
                         
-                        <span class="card-title">ICS 2023 Review Chap 1</span>
+                        <span class="card-title">ICS 2023 Review Chap 5</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -760,7 +838,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
                             </span>
                         <span class="publish-author">
                             
@@ -1031,11 +1109,6 @@
                     class="white-color"></span>&nbsp;次
             </span>
             
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
             
             <br>
             

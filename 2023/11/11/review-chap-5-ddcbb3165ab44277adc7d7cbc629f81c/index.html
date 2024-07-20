@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ICS 2023 Review Chap 8, Eddie Wong">
+    <meta name="keywords" content="ICS 2023 Review Chap 5, Eddie Wong">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ICS 2023 Review Chap 8 | Eddie Wong</title>
+    <title>ICS 2023 Review Chap 5 | Eddie Wong</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ICS 2023 Review Chap 8</h1>
+                    <h1 class="description center-align post-title">ICS 2023 Review Chap 5</h1>
                 </div>
             </div>
         </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-20
+                    2023-11-11
                 </div>
                 
 
@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -496,65 +496,151 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Review-Chap-8"><a href="#Review-Chap-8" class="headerlink" title="Review Chap 8"></a>Review Chap 8</h1><h3 id="Subroutines"><a href="#Subroutines" class="headerlink" title="Subroutines"></a>Subroutines</h3><p>It is almost always the case that collections of fragments to invoke the program are available to user programmers to free them from writing their own. These collections are referred to as libraries.</p>
-<p>In a library, a specified fragment can be invoked multiple times within the same program without having to specify its details. Such program fragments are called subroutines, or in C we call it functions.</p>
+                <h1 id="Review-Chap-5"><a href="#Review-Chap-5" class="headerlink" title="Review Chap 5"></a>Review Chap 5</h1><ul>
+<li><p>ISA(omit)</p>
+<p>  The ISA specifies all the information about the computer that the software has to be aware of.</p>
+<p>  The ISA specifies the memory organization, register set,and instruction set,including the opcodes, data types, and addressing modes of instructions in the instruction set.</p>
+<p>  There are 65536 memory locations in LC-3, and 8 registers. We refer to 16 bits as one word, and we say the LC-3 is word-addressable.</p>
+<p>  Each register in the set is called a general purpose register(GPR).</p>
+<p>  Register file: what does every register contain.</p>
 <ul>
-<li>The Call&#x2F;Return Mechanism</li>
+<li><p>The instruction set: defined by its set of opcodes, data types and addressing modes.</p>
+<p>  The addressing modes determine where the operands are located. The data type is the representation of operands in 0s and 1s.</p>
+<h3 id="Opcodes"><a href="#Opcodes" class="headerlink" title="Opcodes"></a>Opcodes</h3><ul>
+<li>Some ISAs have a very large number of opcodes, one for each of a very large number of tasks that a program may wish to carry out.</li>
+<li>There are three different types of instructions, which means three different types of opcodes: operates, data movement, and control.</li>
+<li>Operate instructions <strong>process</strong> information.</li>
+<li>Data movement instructions <strong>move</strong> information between memory and the registers and between registers&#x2F;memory and input&#x2F;output devices.</li>
+<li>Control instructions <strong>change</strong> the sequence of instructions that will be executed.</li>
 </ul>
-<p>It allows us to execute this one three-instruction sequence multiple times by requiring us to include it as a subroutine in our program only once.</p>
-<p>The programmer uses the call&#x2F;return mechanism to direct the computer each time via the call instruction to the code A, and after the computer has executed the code A, to the return instruction to the proper next instruction to be executed in the program.</p>
-<p>Two instructions will be needed: JSR(R) calls the subroutinue; and RET(JMP R7) to go back to the main program.</p>
+<p>  <strong>Data Types</strong></p>
 <ul>
-<li><p>The JSR(R) instruction detailed</p>
-<p>  The instruction uses one of two addressing modes for computing the starting address of the subroutine, PC-relative addressing or Base Register addressing. The LC-3 assembly language provides two different mnemonic names for the opcode, JSR and JSRR, depending on which addressing mode is used.</p>
-<p>  The JSR (R) instruction does two things. Like all control instructions, it loads the PC, overwriting the incremented PC that was loaded during the FETCH phase of the JSR (R) instruction. In this case, the starting address of the subroutine is computed and loaded into the PC.</p>
-<p>  The second thing the JSR (R) instruction does is save the return address in R7. The return address is the incremented PC, which is the address of the instruction following the JSR (R) instruction in the calling program.</p>
+<li>Every opcode will <strong>interpret</strong> the bit patterns of its operands according <strong>to</strong> the data type it is designed to support.</li>
+</ul>
+<p>  <strong>Addressing Modes</strong></p>
+<ul>
+<li>An <strong>addressing mode</strong> is a mechanism for specifying where the operand is located.</li>
+<li>LC-3 supports five addressing modes:</li>
+<li><strong>immediate</strong>&#x2F;<strong>literal</strong> (the same)</li>
+<li><strong>register</strong></li>
+<li>3 <strong>memory</strong> addressing modes:</li>
+<li><strong>PC-relative</strong></li>
+<li><strong>indirect</strong></li>
+<li><strong>Base+offset</strong></li>
+</ul>
 </li>
-<li><p>Saving and Restoring Registers</p>
+</ul>
 </li>
 </ul>
-<p>If a value in a register will be needed after something else is stored in that register, we must save it before something else happens and restore it before we can subsequently use it. We save a register value by storing it in memory; we restore it by loading it back into the register.</p>
-<p>The save&#x2F;restore problem can be handled either by the calling program before the JSR occurs or by the subroutine.</p>
-<p>In summary, we use the term “caller-save” if the calling program handles the save&#x2F;restore problem, and we use the term “callee-save” if the called program handles the problem. The appropriate one to handle the problem is the one that knows which registers will be destroyed by subsequent actions.</p>
-<h3 id="The-Stack"><a href="#The-Stack" class="headerlink" title="The Stack"></a>The Stack</h3><p>The stack is an abstract data type whose defining notion is that the last thing you stored in the stack is the first thing you remove from it. Simply, Last In, First Out, LIFO.</p>
-<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled.png" alt="Untitled"></p>
-<p>In a stack implemented in hardware, as each value is added or removed, <strong>all the other values already on the stack move.</strong></p>
+<p><img src="/Review%20Chap%205%20ddcbb3165ab44277adc7d7cbc629f81c/Untitled.png" alt="Untitled"></p>
 <ul>
-<li>Implementation in Memory</li>
+<li><strong>Condition Codes（CC）</strong></li>
+<li>The LC-3 has three single-bit registers that are individually set (set to 1) or cleared (set to 0) <strong>each time</strong> one of the eight general purpose registers is written into <strong>as a result</strong> of execution of one of the operate instructions or one of the load instructions.</li>
+<li>Each <strong>operate instruction</strong> performs a computation and writes the result into a general purpose register.</li>
+<li>Each <strong>load instruction</strong> reads the contents of a memory location and writes the value found there into a general purpose register.</li>
+<li>The three single-bit registers are called <strong>N</strong>, <strong>Z</strong>, and <strong>P</strong>, corresponding to their meaning: <strong>n</strong>egative, <strong>z</strong>ero, and <strong>p</strong>ositive. And their value will be modified each time a GPR is written by an operate or a load instruction.</li>
+<li>They are referred to as condition codes because the condition of those bits are used to change the sequence of execution of the instructions in a computer program. (e.g. <code>BR</code>‘s condition.)</li>
 </ul>
-<p>In the LC-3, R6 is the stack pointer.</p>
-<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled%201.png" alt="Untitled"></p>
-<p>These show the implementation in memory. Different from hardware,</p>
-<p>Figure 8.9a shows an initially empty stack. Since there are no values on the stack, the stack pointer contains the address x4000, which is the address of the memory location just after the memory locations reserved for the stack. This setup makes sense because as we will see through the code for pushing and popping values, the stack grows towards zero.</p>
-<p>Figure 8.9b illustrates the stack after pushing the value 18. Notice that the stack pointer now contains the address x3FFF, which becomes the new top of the stack.</p>
-<p>In Figure 8.9c, we can see the stack after pushing the values 31, 5, and 12 in that order. It is important to note that the values inserted into the stack are stored in memory locations with decreasing addresses, as the stack grows towards zero.</p>
-<p>Lastly, Figure 8.9d demonstrates the stack after popping the top two elements off the stack. The values 5 and 12, which were popped, are still present in memory locations x3FFD and x3FFC, respectively. However, these values cannot be accessed from memory as long as every access to memory is controlled by the stack mechanism.</p>
-<p>Unlike the coin holder and computer hardware stack implementations discussed in the previous section, when values are pushed and popped to and from a stack implemented in sequential memory locations, the data already stored on the stack does not physically move.</p>
+<p>结果我研究每个指令的数据通路又给我绕晕了。。。我是真菜</p>
 <ul>
-<li>Underflow and Overflow</li>
+<li><strong>Operate Instructions</strong></li>
+<li><strong><code>ADD</code></strong>, <strong><code>AND</code></strong>, and <strong><code>NOT</code></strong></li>
+<li>The <strong><code>NOT</code></strong> (opcode &#x3D; 1001) instruction is the only (in LC-3) operate instruction that performs a <strong>unary</strong> operation. See docs for details.</li>
 </ul>
-<ol>
-<li>Underflow: Underflow happens when an attempt is made to pop a value from an empty stack. In other words, the stack is already empty, but a pop operation is requested. This results in an error condition because there are no values to retrieve from the stack. It is important to check for underflow conditions before performing a pop operation to avoid data loss or program malfunction.</li>
-<li>Overflow: Overflow occurs when an attempt is made to push a value onto a stack that is already full. In LC-3, the stack is implemented within a defined region of memory with a fixed size. When the stack becomes full and additional values need to be pushed onto it, an overflow condition arises. This can lead to data corruption or unpredictable behavior in the program. It is crucial to monitor the stack usage and prevent overflow situations by appropriately managing the stack size or implementing error handling mechanisms.</li>
-</ol>
-<p>Both underflow and overflow conditions can be detected by monitoring the stack pointer and checking its position relative to the stack boundaries. Handling these scenarios effectively is essential to ensure the proper functioning and integrity of programs using the LC-3 stack.</p>
-<p>Here are a complete picture, from which you can detect the way to avoid underflow and overflow.</p>
-<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled%202.png" alt="Untitled"></p>
-<h3 id="Recursion-a-Powerful-Technique-When-Used-Appopriately"><a href="#Recursion-a-Powerful-Technique-When-Used-Appopriately" class="headerlink" title="Recursion, a Powerful Technique When Used Appopriately"></a>Recursion, a Powerful Technique When Used Appopriately</h3><p>Recursion is a mechanism for expressing a function in terms of itself.</p>
-<p>Good Example：a maze</p>
-<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled%203.png" alt="Untitled"></p>
-<h3 id="The-Queue"><a href="#The-Queue" class="headerlink" title="The Queue"></a>The Queue</h3><p>Unlike the stack, it is FIFO(first in first out). This means we need to keep track of two ends of the storage structure: a FRONT pointer for servicing and a REAR pointer for entering. Here are an example.</p>
-<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled%204.png" alt="Untitled"></p>
-<p>The basic operations: Remove from front, Insert at rear.</p>
-<p>Wrap-Around: It works by having our removal and insertion algorithms test the contents of FRONT and REAR for the value x8005. If we wish to insert, and REAR contains x8005, we know we have reached the end of our available storage and we must see if x8000 is available. If we wish to remove, we must see if FRONT contains the address x8005. If it does, the front of the queue is in x8000.</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856236536-0606ce17-259e-4116-88ab-9d382a258c6b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_17,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856236536-0606ce17-259e-4116-88ab-9d382a258c6b.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_17%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
 <ul>
-<li><strong>NOTE:</strong> We cannot let the empty queue and the full queue look the same, What should we do?</li>
+<li><strong>Inmmediates</strong></li>
 </ul>
-<p>Our answer is to allow the queue to store only n-1 elements if space for n elements has been allocated. That means, if inserting a nth element into the queue would cause FRONT to equal REAR, we do not allow that insertion. We declare the queue full when there are n-1 elements in the queue.</p>
-<p>If the queue is empty, FRONT&#x3D;REAR.</p>
-<p>Test of UNDERFLOW: just test if R3&#x3D;R4. If so, it means it is already empty.</p>
-<p>Test of OVERFLOW: similarly, just add 1 to the REAR, if R3&#x3D;R4, it means it is already full.</p>
-<h3 id="Character-Strings-Omit"><a href="#Character-Strings-Omit" class="headerlink" title="Character Strings(Omit)"></a>Character Strings(Omit)</h3>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856377554-22f4fbf6-f586-4caa-acfe-214c1203dfaf.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856377554-22f4fbf6-f586-4caa-acfe-214c1203dfaf.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>Since the immediate operand havs a size less than a word, so not all 2’s complement integers can be immediate operands.</li>
+<li>The <strong>LEA</strong> Instruction (Although Not Really an Operate)</li>
+<li>It does not really operate on data, it simply <strong>loads</strong> a register with an <strong>address</strong>. It clearly does not move data from memory to a register, nor is it a control instruction. We had to put it somewhere, so we chose to discuss it here! See docs for details.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856727821-214fb9a4-b5f3-4318-ab7d-a7b0fb9d0d59.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856727821-214fb9a4-b5f3-4318-ab7d-a7b0fb9d0d59.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>We shall see shortly that the LEA instruction is useful to <strong>initialize</strong> a register with an address that is very close to the address of the instruction doing the initializing.</li>
+<li><strong>Data Movement Instructions</strong></li>
+<li><em>We will ignore for now the business of moving information from input devices to registers and from registers to output devices which will be an important part of Chapter 9.</em>  <em>In this chapter, we will confine ourselves to moving information between memory and the general purpose registers.</em></li>
+<li>The process of moving information from memory to a register is called a <strong>load</strong>.</li>
+<li>The process of moving information from a register to memory is called a <strong>store</strong>.</li>
+<li>In both cases, the information in the location containing the <strong>source</strong> operand remains <strong>unchanged</strong>.</li>
+<li>In both cases, the location of the <strong>destination</strong> operand is <strong>overwritten</strong>.</li>
+<li>The LC-3 contains six instructions that move information: <strong><code>LD</code></strong>, <strong><code>LDR</code></strong>, <strong><code>LDI</code></strong>; <strong><code>ST</code></strong>, <strong><code>STR</code></strong>, <strong><code>STI</code>.</strong></li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657857321834-ff385e31-c387-4306-9960-d3234706d177.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657857321834-ff385e31-c387-4306-9960-d3234706d177.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>Data movement instructions require two operands, a <strong>source</strong> and a <strong>destination</strong>.</li>
+<li><strong>PC-Relative Mode</strong></li>
+<li><strong><code>LD</code></strong> and <strong><code>ST</code></strong> specify the PC-relative addressing mode.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657857885236-4a6ff41d-4d30-4211-b725-728f7927fa3d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657857885236-4a6ff41d-4d30-4211-b725-728f7927fa3d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li><strong>Indirect Mode</strong></li>
+<li><strong><code>LDI</code></strong> and <strong><code>STI</code></strong> specify the <strong>indirect</strong> addressing mode that means the <strong>address</strong> of the address of the operand to be loaded or stored.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657858056522-1fa1bc60-4bf1-48b5-87ef-5b98b3335631.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657858056522-1fa1bc60-4bf1-48b5-87ef-5b98b3335631.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>在寻址过程中进行一次迭代，用 C 的<code>[]</code>符号写的话感觉就像是<code>mem[ mem[idx] ]</code>。</li>
+<li><strong>Base+offset Mode</strong></li>
+<li><code>LDR</code> and <code>STR</code> specify the <strong>Base+offset</strong> addressing mode. The Base+offset mode is so named because the address of the operand is obtained by <strong>adding</strong> a sign-extended six-bit <strong>offset</strong> to a <strong>base register</strong>.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657858232090-0d249491-0b39-4e60-8f72-96893439de0b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657858232090-0d249491-0b39-4e60-8f72-96893439de0b.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_21%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>Note that the Base+offset addressing mode also allows the address of the operand to be <strong>anywhere</strong> in the computer’s memory.</li>
+<li>所以因为这个特性，这种寻址模式是在长距离跳转中较为实用的。</li>
+</ul>
+<h3 id="Control-Instructions"><a href="#Control-Instructions" class="headerlink" title="Control Instructions"></a>Control Instructions</h3><p>The LC-3 has five opcodes that enable the sequential execution flow to be broken:</p>
+<ul>
+<li>conditional branch</li>
+<li>unconditional jump</li>
+<li>subroutine call (sometimes called function)</li>
+<li><strong><code>TRAP</code></strong> (service call)</li>
+<li><strong><code>RTI</code></strong> (Return from Trap or Interrupt)</li>
+</ul>
+<p>Two Methods of <strong>Loop</strong> Control</p>
+<ul>
+<li><strong>loop body</strong> &amp; <strong>iteration</strong> fo the loop body</li>
+<li>Loop Control with a <strong>Counter</strong></li>
+<li>Loop Control with a <strong>Sentinel</strong></li>
+<li>We append to our sequence of values to be processed a value that we know ahead of time can <strong>never occur</strong> (i.e., the <strong>sentinel</strong>).</li>
+<li>就是需要一个哨兵标记序列的尾部，当访问到该哨兵的时候跳出循环。</li>
+<li>eg: if we are adding a sequence of numbers, a sentinel could be a letter <code>A</code> or a &#96;&#96;, that is, something that is not a number.</li>
+<li>BR instruction</li>
+</ul>
+<p><img src="/Review%20Chap%205%20ddcbb3165ab44277adc7d7cbc629f81c/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>JMP Instruction TRAP instruction(我们会在后面的章节中讨论他们，现在还不是时候）</li>
+<li>Another Example: Counting Occurrences of a Character</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859510501-fb0532f9-02e7-4319-bf78-37597547c1dc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_11,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859510501-fb0532f9-02e7-4319-bf78-37597547c1dc.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_11%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859523144-18c15d17-9367-4960-a418-6f7e62391d6e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_18,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859523144-18c15d17-9367-4960-a418-6f7e62391d6e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_18%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li><strong>The Data Path Revisited</strong></li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859746575-60df7310-d152-4bec-80b2-b965ade04159.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859746575-60df7310-d152-4bec-80b2-b965ade04159.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_23%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li><strong>Basic Components</strong> of the Data Path</li>
+<li>The <strong>Global Bus</strong></li>
+<li>The LC-3 global bus consists of <strong>16</strong> wires and associated electronics. It allows one structure to transfer up to 16 bits of information to another structure by making the necessary electronic connections on the bus.</li>
+<li>Note that each structure that supplies values to the bus has a triangle just behind its input arrow to the bus. This triangle (called a <strong>tri-state device</strong>) allows the computer’s control logic to enable exactly one supplier to provide information to the bus at any one time.</li>
+<li>The pros and cons of a <strong>single global bus</strong> is yet another topic that will have to wait for later in your education.</li>
+<li><strong>Memory</strong></li>
+<li>One of the most important parts of any computer is the memory that <strong>contains both instructions and data</strong>.</li>
+<li>Memory is accessed by loading the memory address register (<strong>MAR</strong>) with the address of the location to be accessed. To perform a load, control signals then read the contents of that memory location, and the result of that read is delivered by the memory to the memory data register (<strong>MDR</strong>). On the other hand, to perform a store, what is to be stored is loaded into the <strong>MDR</strong>. Then the control signals assert a write enable (<strong>WE</strong>) signal in order to store the value contained in <strong>MDR</strong> in the memory location specified by MAR.</li>
+<li>The <strong>ALU</strong> and the <strong>Register File</strong></li>
+<li>The results of an ALU operation are (a) a <strong>result</strong> that is stored in one of the registers, and (b) the three single-bit <strong>condition codes</strong>.</li>
+<li>The <strong>PC</strong> and the <strong>PCMUX</strong></li>
+<li>The <strong>MARMUX</strong></li>
+<li>The <strong>Instruction Cycle Specific to the LC-3</strong></li>
+<li><strong>FETCH</strong></li>
+<li><strong>DECODE</strong></li>
+<li><strong>EVALUATE ADDRESS</strong></li>
+<li><strong>OPERAND FETCH</strong></li>
+<li><strong>EXECUTE</strong></li>
+<li><strong>STORE RESULT</strong></li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -731,6 +817,28 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk5NC8zNjQ1Nw==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
 
@@ -747,13 +855,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/28/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/">
+                <a href="/2023/11/14/review-chap-6-7-e66b76be92614538a66fb9a1d93b9783/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="ICS 2023 Review Chap 9">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ICS 2023 Review Chap 6&amp;7">
                         
-                        <span class="card-title">ICS 2023 Review Chap 9</span>
+                        <span class="card-title">ICS 2023 Review Chap 6&amp;7</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -764,7 +872,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
                         </span>
                         <span class="publish-author">
                             
@@ -800,13 +908,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/14/Review%20Chap%206&7%20e66b76be92614538a66fb9a1d93b9783/">
+                <a href="/2023/11/09/review-chap-4-db0804e57cb947bda974a470320dbd90/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ICS 2023 Review Chap 6&amp;7">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="ICS 2023 Review Chap 4">
                         
-                        <span class="card-title">ICS 2023 Review Chap 6&amp;7</span>
+                        <span class="card-title">ICS 2023 Review Chap 4</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -817,7 +925,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-09
                             </span>
                         <span class="publish-author">
                             
@@ -1088,11 +1196,6 @@
                     class="white-color"></span>&nbsp;次
             </span>
             
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
             
             <br>
             

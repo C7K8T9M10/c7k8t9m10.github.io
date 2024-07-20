@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ICS 2023 Review Chap 5, Eddie Wong">
+    <meta name="keywords" content="ICS 2023 Review Chap 3, Eddie Wong">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ICS 2023 Review Chap 5 | Eddie Wong</title>
+    <title>ICS 2023 Review Chap 3 | Eddie Wong</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ICS 2023 Review Chap 5</h1>
+                    <h1 class="description center-align post-title">ICS 2023 Review Chap 3</h1>
                 </div>
             </div>
         </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-11
+                    2023-11-05
                 </div>
                 
 
@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    9 分
                 </div>
                 
 
@@ -496,149 +496,185 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Review-Chap-5"><a href="#Review-Chap-5" class="headerlink" title="Review Chap 5"></a>Review Chap 5</h1><ul>
-<li><p>ISA(omit)</p>
-<p>  The ISA specifies all the information about the computer that the software has to be aware of.</p>
-<p>  The ISA specifies the memory organization, register set,and instruction set,including the opcodes, data types, and addressing modes of instructions in the instruction set.</p>
-<p>  There are 65536 memory locations in LC-3, and 8 registers. We refer to 16 bits as one word, and we say the LC-3 is word-addressable.</p>
-<p>  Each register in the set is called a general purpose register(GPR).</p>
-<p>  Register file: what does every register contain.</p>
-<ul>
-<li><p>The instruction set: defined by its set of opcodes, data types and addressing modes.</p>
-<p>  The addressing modes determine where the operands are located. The data type is the representation of operands in 0s and 1s.</p>
-<h3 id="Opcodes"><a href="#Opcodes" class="headerlink" title="Opcodes"></a>Opcodes</h3><ul>
-<li>Some ISAs have a very large number of opcodes, one for each of a very large number of tasks that a program may wish to carry out.</li>
-<li>There are three different types of instructions, which means three different types of opcodes: operates, data movement, and control.</li>
-<li>Operate instructions <strong>process</strong> information.</li>
-<li>Data movement instructions <strong>move</strong> information between memory and the registers and between registers&#x2F;memory and input&#x2F;output devices.</li>
-<li>Control instructions <strong>change</strong> the sequence of instructions that will be executed.</li>
-</ul>
-<p>  <strong>Data Types</strong></p>
-<ul>
-<li>Every opcode will <strong>interpret</strong> the bit patterns of its operands according <strong>to</strong> the data type it is designed to support.</li>
-</ul>
-<p>  <strong>Addressing Modes</strong></p>
-<ul>
-<li>An <strong>addressing mode</strong> is a mechanism for specifying where the operand is located.</li>
-<li>LC-3 supports five addressing modes:</li>
-<li><strong>immediate</strong>&#x2F;<strong>literal</strong> (the same)</li>
-<li><strong>register</strong></li>
-<li>3 <strong>memory</strong> addressing modes:</li>
-<li><strong>PC-relative</strong></li>
-<li><strong>indirect</strong></li>
-<li><strong>Base+offset</strong></li>
-</ul>
+                <h1 id="Review-Chap-3"><a href="#Review-Chap-3" class="headerlink" title="Review Chap 3"></a>Review Chap 3</h1><ul>
+<li><p>Transistor: MOS transistors, which are below our lowest level of abstraction. Transistor has three terminals: the <strong>gate</strong>, the <strong>source</strong> and the <strong>drain</strong>.</p>
+</li>
+<li><p>Two types of MOS: P-type, when the gate is supplied with 0 volts, it acts as a piece of wire(short circuit), when supplied with 1.2 volts, it acts like an open circuit; N-type, which is opposite to P-type. when there are no volts, it acts like an open circuit, when there are 1.2 volts in the gate, it acts like a piece of wire(short circuit).</p>
+<p>  <img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled.png" alt="Untitled"></p>
+  <aside>
+  💡 N-type
+  
+  </aside>
+  
+<p>  <img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%201.png" alt="Untitled"></p>
+  <aside>
+  💡 P-type
+  
+  </aside>
+  
+<p>  在使用上，N 管和 P 管的使用方向是反过来的，并且在充当开关时，一般以 N 管作下管，P 管做上管，主要原理参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96545244">这篇文章</a>。可以发现，在简化图中看不出哪头是源极哪头是漏极，只在 Gate 处加了一个非来表示，但是实际上两个的使用方向大概是相反的（例如下图）</p>
 </li>
 </ul>
-</li>
-</ul>
-<p><img src="/Review%20Chap%205%20ddcbb3165ab44277adc7d7cbc629f81c/Untitled.png" alt="Untitled"></p>
+<h1 id="Logic-Gates"><a href="#Logic-Gates" class="headerlink" title="Logic Gates"></a>Logic Gates</h1><p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%202.png" alt="Untitled"></p>
+<aside>
+💡 The NOT Gates (Inverter)
+
+</aside>
+
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%203.png" alt="Untitled"></p>
+<aside>
+💡 The NOR Gates
+
+</aside>
+
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%204.png" alt="Untitled"></p>
+<aside>
+💡 The OR Gates
+
+</aside>
+
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%205.png" alt="Untitled"></p>
+<aside>
+💡 AND Gates (AB-D)       and        NAND Gates (AB-C)
+
+</aside>
+
+<p>• 可以发现，与或门的设计都是从与非和或非开始的，而其结构的上半部分是一个“或”选择高电势的关系，下半部分是“与”选择接地的关系，深入感受一下这一层，就会发现这些电路都很好设计。</p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%206.png" alt="Untitled"></p>
+<aside>
+💡 raise our level of abstraction and use the symbols here
+
+</aside>
+
+<p>Also, you can consider using gates with more than two inputs, whose truth table can be easy to draw.</p>
+<h1 id="Combinational-Logic-Circuits"><a href="#Combinational-Logic-Circuits" class="headerlink" title="Combinational Logic Circuits"></a>Combinational Logic Circuits</h1><p>1.Decoder</p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%207.png" alt="Untitled"></p>
 <ul>
-<li><strong>Condition Codes（CC）</strong></li>
-<li>The LC-3 has three single-bit registers that are individually set (set to 1) or cleared (set to 0) <strong>each time</strong> one of the eight general purpose registers is written into <strong>as a result</strong> of execution of one of the operate instructions or one of the load instructions.</li>
-<li>Each <strong>operate instruction</strong> performs a computation and writes the result into a general purpose register.</li>
-<li>Each <strong>load instruction</strong> reads the contents of a memory location and writes the value found there into a general purpose register.</li>
-<li>The three single-bit registers are called <strong>N</strong>, <strong>Z</strong>, and <strong>P</strong>, corresponding to their meaning: <strong>n</strong>egative, <strong>z</strong>ero, and <strong>p</strong>ositive. And their value will be modified each time a GPR is written by an operate or a load instruction.</li>
-<li>They are referred to as condition codes because the condition of those bits are used to change the sequence of execution of the instructions in a computer program. (e.g. <code>BR</code>‘s condition.)</li>
+<li>Exactly one of its outputs is 1 and all the rest are 0s.</li>
+<li>In general, decoders have n  inputs and  2^n outputs.</li>
+<li>We say the output line that detects the input pattern is <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%B7%E8%A8%80_(%E7%A8%8B%E5%BC%8F)">🔗</a><strong>asserted</strong>.</li>
+<li>The decoder is useful in determining how to interpret a bit pattern.</li>
 </ul>
-<p>结果我研究每个指令的数据通路又给我绕晕了。。。我是真菜</p>
+<ol>
+<li>Mux(multiplexer): to select one of the inputs and connect it to the output.</li>
+</ol>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%208.png" alt="Untitled"></p>
+<aside>
+💡 a 2-to-1 mux, (c) shows the standard representation for a mux
+
+</aside>
+
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%209.png" alt="Untitled"></p>
+<aside>
+💡 a four-input mux, (c) shows the standard representation for a four-input mux
+
+</aside>
+
 <ul>
-<li><strong>Operate Instructions</strong></li>
-<li><strong><code>ADD</code></strong>, <strong><code>AND</code></strong>, and <strong><code>NOT</code></strong></li>
-<li>The <strong><code>NOT</code></strong> (opcode &#x3D; 1001) instruction is the only (in LC-3) operate instruction that performs a <strong>unary</strong> operation. See docs for details.</li>
+<li>The select signal (S in Figure 3.12) determines which input is connected to the output.</li>
+<li>We say S selects the source of the mux (either A or B) to be routed through to the output C.</li>
+<li>In general, a mux consists of 2^n inputs and n select lines.</li>
+<li>用来实现输入的<strong>路由</strong>，有点像铁轨的变道装置，通过 S 的数据来选择使用哪一条输入。</li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856236536-0606ce17-259e-4116-88ab-9d382a258c6b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_17,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856236536-0606ce17-259e-4116-88ab-9d382a258c6b.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_17%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ol>
+<li>One-Bit Adder (Full Adder)</li>
+</ol>
+<p>The truth table of it is below.</p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2010.png" alt="Untitled"></p>
 <ul>
-<li><strong>Inmmediates</strong></li>
+<li>It describes the result of binary addition on <strong>one column</strong> of bits within two <em>n</em>bit operands.</li>
+<li>Aj and Bj are digits from inputs,Cj is the carry number from  Aj-1 + Bj-1 , and Sj is the (j+1)th digit of output.</li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856377554-22f4fbf6-f586-4caa-acfe-214c1203dfaf.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856377554-22f4fbf6-f586-4caa-acfe-214c1203dfaf.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2011.png" alt="Untitled"></p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2012.png" alt="Untitled"></p>
+<p>如果不考虑进位的话，这是一个半加器；（如图中最右边）考虑进位的话，这是一个全加器（如其他部分）。</p>
+<ol>
+<li>The Programmable Logic Array(PLA) in Chinese:可编程阵列</li>
+</ol>
 <ul>
-<li>Since the immediate operand havs a size less than a word, so not all 2’s complement integers can be immediate operands.</li>
-<li>The <strong>LEA</strong> Instruction (Although Not Really an Operate)</li>
-<li>It does not really operate on data, it simply <strong>loads</strong> a register with an <strong>address</strong>. It clearly does not move data from memory to a register, nor is it a control instruction. We had to put it somewhere, so we chose to discuss it here! See docs for details.</li>
+<li>The implementation algorithm is simply to connect the output of an AND gate to the input of an OR gate if the corresponding row of the truth table produces an output 1 for that output column. Hence the notion of <strong>programmable</strong>. That is, we say we program the connections from AND gate outputs to OR gate inputs to implement our desired logic functions.</li>
+<li><strong>Logical Completeness</strong></li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856727821-214fb9a4-b5f3-4318-ab7d-a7b0fb9d0d59.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657856727821-214fb9a4-b5f3-4318-ab7d-a7b0fb9d0d59.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p> We say that the set of gates {AND, OR, NOT} is <strong>logically complete</strong> because we can build a circuit to carry out the specification of any truth table we wish without using any other kind of gate.</p>
+<h1 id="Basic-Storage-Elements"><a href="#Basic-Storage-Elements" class="headerlink" title="Basic Storage Elements"></a>Basic Storage Elements</h1><h2 id="R-S-Latch"><a href="#R-S-Latch" class="headerlink" title="R-S Latch"></a>R-S Latch</h2><p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2013.png" alt="Untitled"></p>
+<p>R-S latch can store a bit of information. And the circuit is above.</p>
 <ul>
-<li>We shall see shortly that the LEA instruction is useful to <strong>initialize</strong> a register with an address that is very close to the address of the instruction doing the initializing.</li>
-<li><strong>Data Movement Instructions</strong></li>
-<li><em>We will ignore for now the business of moving information from input devices to registers and from registers to output devices which will be an important part of Chapter 9.</em>  <em>In this chapter, we will confine ourselves to moving information between memory and the general purpose registers.</em></li>
-<li>The process of moving information from memory to a register is called a <strong>load</strong>.</li>
-<li>The process of moving information from a register to memory is called a <strong>store</strong>.</li>
-<li>In both cases, the information in the location containing the <strong>source</strong> operand remains <strong>unchanged</strong>.</li>
-<li>In both cases, the location of the <strong>destination</strong> operand is <strong>overwritten</strong>.</li>
-<li>The LC-3 contains six instructions that move information: <strong><code>LD</code></strong>, <strong><code>LDR</code></strong>, <strong><code>LDI</code></strong>; <strong><code>ST</code></strong>, <strong><code>STR</code></strong>, <strong><code>STI</code>.</strong></li>
+<li><strong>R</strong> : <strong>R</strong>esetting : setting the latch to store a <strong><code>0</code></strong>;</li>
+<li><strong>S</strong> : <strong>S</strong>etting: setting the latch to store a <strong><code>1</code></strong>;</li>
+<li>The <strong>Quiescent</strong> (or <strong>quiet</strong>) State: the state when the latch is storing a value, either <code>0</code> or <code>1</code> and nothing is try to change the value.</li>
+<li>When inputs <em><strong>S</strong></em> and <em><strong>R</strong></em> both have logic value <code>1</code>.</li>
+<li>At this time, the output of <em><strong>a</strong></em> and <em><strong>b</strong></em> won’t change. (But <em><strong>a</strong></em> and <em><strong>b</strong></em> are the opposite if we set <em><strong>S</strong></em> and <em><strong>R</strong></em> properly.)</li>
+<li><strong>Setting</strong> the Latch to <em><strong>a</strong></em> <code>1</code> or <em><strong>a</strong></em> <code>0</code></li>
+<li>The latch can be set to <em><strong>a</strong></em> <code>1</code> by momentarily setting <em><strong>S</strong></em> to <code>0</code>.</li>
+<li>The latch can be set to <em><strong>a</strong></em> <code>0</code> by momentarily setting <em><strong>R</strong></em> to <code>0</code>.</li>
+<li>Both <em><strong>S</strong></em> and <em><strong>R</strong></em> must never be allowed to be set to <code>0</code> at the <strong>same time</strong>.</li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657857321834-ff385e31-c387-4306-9960-d3234706d177.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657857321834-ff385e31-c387-4306-9960-d3234706d177.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<h2 id="The-Gated-D-Latch"><a href="#The-Gated-D-Latch" class="headerlink" title="The Gated D Latch"></a>The Gated D Latch</h2><p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2014.png" alt="Untitled"></p>
+<p>WE stands for write enable.When it is not asserted, the output S and R are both equal to 1. When it is momentarily set to 1,exactly one of the outputs(S or R) are set to 0,depending on the values of D.</p>
+<p>D&#x3D;1—&gt;S&#x3D;0     D&#x3D;0—&gt;R&#x3D;0    WE&#x3D;0—&gt;S&#x3D;R&#x3D;1</p>
+<h1 id="The-Concept-of-Memory"><a href="#The-Concept-of-Memory" class="headerlink" title="The Concept of Memory"></a>The Concept of Memory</h1><p>Memory is made up of a number of locations, each uniquely identifiable and each having the ability to store a value.We refer to the unique identifier associated with each memory location as its address. And the number of bits of information stored in each location as its addressability.</p>
 <ul>
-<li>Data movement instructions require two operands, a <strong>source</strong> and a <strong>destination</strong>.</li>
-<li><strong>PC-Relative Mode</strong></li>
-<li><strong><code>LD</code></strong> and <strong><code>ST</code></strong> specify the PC-relative addressing mode.</li>
+<li>Address Space : the total number of uniquely identifiable locations.</li>
+<li>Addressability : 注意和 address space 做区分，address space 指的是 memory 中，依据寻址输入（下图的<code>A[1:0]</code>）能够查询到的 location 数量的<strong>上限</strong>（即两条线但是只画出了 3个location的话，address space 依然是 4）。</li>
+<li>A 2^2-by-3-Bit Memory</li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657857885236-4a6ff41d-4d30-4211-b725-728f7927fa3d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657857885236-4a6ff41d-4d30-4211-b725-728f7927fa3d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
-<ul>
-<li><strong>Indirect Mode</strong></li>
-<li><strong><code>LDI</code></strong> and <strong><code>STI</code></strong> specify the <strong>indirect</strong> addressing mode that means the <strong>address</strong> of the address of the operand to be loaded or stored.</li>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2015.png" alt="Untitled"></p>
+<p>▪ 左侧的 decoder 解析<code>A[1:0]</code>中传入的 location 信息，然后将该信息输入到 mux 中，以选择路由对应的 location 信息。</p>
+<p>▪ That is, the memory has an <strong>address space</strong> of four locations and an <strong>addressability</strong> of three bits. It requires two bits to specify the address.</p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2016.png" alt="Untitled"></p>
+<h1 id="Sequential-Logic-Circuits"><a href="#Sequential-Logic-Circuits" class="headerlink" title="Sequential Logic Circuits"></a>Sequential Logic Circuits</h1><ul>
+<li>Can both <strong>process</strong> information and <strong>store</strong> information.</li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657858056522-1fa1bc60-4bf1-48b5-87ef-5b98b3335631.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657858056522-1fa1bc60-4bf1-48b5-87ef-5b98b3335631.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2017.png" alt="Untitled"></p>
 <ul>
-<li>在寻址过程中进行一次迭代，用 C 的<code>[]</code>符号写的话感觉就像是<code>mem[ mem[idx] ]</code>。</li>
-<li><strong>Base+offset Mode</strong></li>
-<li><code>LDR</code> and <code>STR</code> specify the <strong>Base+offset</strong> addressing mode. The Base+offset mode is so named because the address of the operand is obtained by <strong>adding</strong> a sign-extended six-bit <strong>offset</strong> to a <strong>base register</strong>.</li>
+<li>Sequential logic circuits are used to implement a very important class of mechanisms called <strong>finite state machines</strong>, which are used in essentially all branches of engineering.</li>
+<li>e.g: used as controllers of electrical systems, mechanical systems, and aeronautical systems.</li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657858232090-0d249491-0b39-4e60-8f72-96893439de0b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657858232090-0d249491-0b39-4e60-8f72-96893439de0b.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_21%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<h2 id="An-Example-The-Combination-Lock"><a href="#An-Example-The-Combination-Lock" class="headerlink" title="An Example: The Combination Lock"></a>An Example: The Combination Lock</h2><p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2018.png" alt="Untitled"></p>
 <ul>
-<li>Note that the Base+offset addressing mode also allows the address of the operand to be <strong>anywhere</strong> in the computer’s memory.</li>
-<li>所以因为这个特性，这种寻址模式是在长距离跳转中较为实用的。</li>
+<li>Lock (a) will only open when you complete dialing in a specific order. Assume that the correct order is R13-L22-R3.</li>
+<li>Lock (b) won’t care about how you complete rotation.</li>
 </ul>
-<h3 id="Control-Instructions"><a href="#Control-Instructions" class="headerlink" title="Control Instructions"></a>Control Instructions</h3><p>The LC-3 has five opcodes that enable the sequential execution flow to be broken:</p>
+<h2 id="The-Concept-of-State"><a href="#The-Concept-of-State" class="headerlink" title="The Concept of State"></a>The Concept of State</h2><p>State: is a snapshot of all the relavent elements of the system at the moment the snapshot is taken.</p>
 <ul>
-<li>conditional branch</li>
-<li>unconditional jump</li>
-<li>subroutine call (sometimes called function)</li>
-<li><strong><code>TRAP</code></strong> (service call)</li>
-<li><strong><code>RTI</code></strong> (Return from Trap or Interrupt)</li>
+<li>A finite state machine consists of five elements:</li>
 </ul>
-<p>Two Methods of <strong>Loop</strong> Control</p>
+<ol>
+<li>a finite number of states;</li>
+<li>a finite number of external inputs ;</li>
+<li>a finite number of external outputs;</li>
+<li>an explicit specification of all state transitions;</li>
+<li>an explicit specification of what determines each external output value;</li>
+</ol>
 <ul>
-<li><strong>loop body</strong> &amp; <strong>iteration</strong> fo the loop body</li>
-<li>Loop Control with a <strong>Counter</strong></li>
-<li>Loop Control with a <strong>Sentinel</strong></li>
-<li>We append to our sequence of values to be processed a value that we know ahead of time can <strong>never occur</strong> (i.e., the <strong>sentinel</strong>).</li>
-<li>就是需要一个哨兵标记序列的尾部，当访问到该哨兵的时候跳出循环。</li>
-<li>eg: if we are adding a sequence of numbers, a sentinel could be a letter <code>A</code> or a &#96;&#96;, that is, something that is not a number.</li>
-<li>BR instruction</li>
+<li>There is no fixed amount of time between successive inputs to the finite stat machine above. We say these systems are <strong>asynchronous</strong> because there is nothing synchronizing when each state transition must occur.</li>
+<li>Synchronous Finite State Machine: the state transitions take place, one after the other, at identical fixed units of time.</li>
 </ul>
-<p><img src="/Review%20Chap%205%20ddcbb3165ab44277adc7d7cbc629f81c/Untitled%201.png" alt="Untitled"></p>
+<p>Attention: Whether it is synchronous or not,they carry out work,one state transition at a time, moving closer to a goal.</p>
 <ul>
-<li>JMP Instruction TRAP instruction(我们会在后面的章节中讨论他们，现在还不是时候）</li>
-<li>Another Example: Counting Occurrences of a Character</li>
+<li>The Clock: Control of that synchronous behavior is in part the responsibility of the clock circuit. Each of the repeated sequence of identical intervals is referred to as a <strong>clock cycle.</strong></li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859510501-fb0532f9-02e7-4319-bf78-37597547c1dc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_11,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859510501-fb0532f9-02e7-4319-bf78-37597547c1dc.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_11%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859523144-18c15d17-9367-4960-a418-6f7e62391d6e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_18,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859523144-18c15d17-9367-4960-a418-6f7e62391d6e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_18%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2019.png" alt="Untitled"></p>
+<p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2020.png" alt="Untitled"></p>
+<h2 id="The-Flip-Flop"><a href="#The-Flip-Flop" class="headerlink" title="The Flip-Flop"></a>The Flip-Flop</h2><p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2021.png" alt="Untitled"></p>
+<p>▪ The storage elements that allow us to read the current state throughout the current clock cycle, and <strong>not</strong> write the next state values into the storage elements <strong>until</strong> the beginning of the next clock cycle.</p>
 <ul>
-<li><strong>The Data Path Revisited</strong></li>
+<li>Reading must be allowed throughout the clock cycle, and writing must occur at the end of the clock cycle.</li>
+<li>The master &#x2F; slave flip-flop can be constructed out of <strong>two gated D latches</strong>, one referred to as the <strong>master</strong>, the other referred to as the <strong>slave</strong>.</li>
+<li>Think about that: When <em>master</em> is “reading”, the <em>slave</em> is “writing”, and vice versa.</li>
+<li>FF 的行为在一个 Clock Cycle 里完成，在分析不同维度的事情的时候要从不同维度的角度来思考。</li>
+<li>更底层的：</li>
+<li>假设 Cycle 的前半部分 Master 可写， Slave 只读，则：</li>
+<li>在模式切换的那一瞬间，Master 写入的数据会被 Slave 存储；</li>
+<li>更抽象的：</li>
+<li>在 Cycle 开始结束后，会输出 Cycle 进行时输出的数据；</li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859746575-60df7310-d152-4bec-80b2-b965ade04159.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657859746575-60df7310-d152-4bec-80b2-b965ade04159.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_23%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<h1 id="The-Preview-of-Datapath-in-LC-3"><a href="#The-Preview-of-Datapath-in-LC-3" class="headerlink" title="The Preview of Datapath in LC-3"></a>The Preview of Datapath in LC-3</h1><p><img src="/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/Untitled%2022.png" alt="Untitled"></p>
 <ul>
-<li><strong>Basic Components</strong> of the Data Path</li>
-<li>The <strong>Global Bus</strong></li>
-<li>The LC-3 global bus consists of <strong>16</strong> wires and associated electronics. It allows one structure to transfer up to 16 bits of information to another structure by making the necessary electronic connections on the bus.</li>
-<li>Note that each structure that supplies values to the bus has a triangle just behind its input arrow to the bus. This triangle (called a <strong>tri-state device</strong>) allows the computer’s control logic to enable exactly one supplier to provide information to the bus at any one time.</li>
-<li>The pros and cons of a <strong>single global bus</strong> is yet another topic that will have to wait for later in your education.</li>
-<li><strong>Memory</strong></li>
-<li>One of the most important parts of any computer is the memory that <strong>contains both instructions and data</strong>.</li>
-<li>Memory is accessed by loading the memory address register (<strong>MAR</strong>) with the address of the location to be accessed. To perform a load, control signals then read the contents of that memory location, and the result of that read is delivered by the memory to the memory data register (<strong>MDR</strong>). On the other hand, to perform a store, what is to be stored is loaded into the <strong>MDR</strong>. Then the control signals assert a write enable (<strong>WE</strong>) signal in order to store the value contained in <strong>MDR</strong> in the memory location specified by MAR.</li>
-<li>The <strong>ALU</strong> and the <strong>Register File</strong></li>
-<li>The results of an ALU operation are (a) a <strong>result</strong> that is stored in one of the registers, and (b) the three single-bit <strong>condition codes</strong>.</li>
-<li>The <strong>PC</strong> and the <strong>PCMUX</strong></li>
-<li>The <strong>MARMUX</strong></li>
-<li>The <strong>Instruction Cycle Specific to the LC-3</strong></li>
-<li><strong>FETCH</strong></li>
-<li><strong>DECODE</strong></li>
-<li><strong>EVALUATE ADDRESS</strong></li>
-<li><strong>OPERAND FETCH</strong></li>
-<li><strong>EXECUTE</strong></li>
-<li><strong>STORE RESULT</strong></li>
+<li>The data path consists of all the logic structures that combine to process information in the core of the computer.</li>
+<li>A <strong>register</strong> is simply a set of <em>n</em> flip-flops that collectively are used to store one <em>n</em> bit value.</li>
+<li>In the figure, <strong>PC, IR, MAR,</strong> and <strong>MDR</strong> are all 16-bit <strong>registers</strong> that store 16 bits of information each. The block labeled <strong>REG</strong> <strong>FILE</strong> consists of <strong>eight registers</strong> that each store 16 bits of information.</li>
+<li>The data path also shows three <strong>1-bit registers</strong>, <strong>N, Z,</strong> and <strong>P</strong>.</li>
 </ul>
 
                 
@@ -817,6 +853,28 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk5NC8zNjQ1Nw==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
 
@@ -833,13 +891,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/14/Review%20Chap%206&7%20e66b76be92614538a66fb9a1d93b9783/">
+                <a href="/2023/11/09/review-chap-4-db0804e57cb947bda974a470320dbd90/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ICS 2023 Review Chap 6&amp;7">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="ICS 2023 Review Chap 4">
                         
-                        <span class="card-title">ICS 2023 Review Chap 6&amp;7</span>
+                        <span class="card-title">ICS 2023 Review Chap 4</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -850,7 +908,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-09
                         </span>
                         <span class="publish-author">
                             
@@ -886,13 +944,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/09/Review%20Chap%204%20db0804e57cb947bda974a470320dbd90/">
+                <a href="/2023/11/03/review-chap-2-44ab637553b3440d9a08155cb4dc336a/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="ICS 2023 Review Chap 4">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="ICS 2023 Review Chap 2">
                         
-                        <span class="card-title">ICS 2023 Review Chap 4</span>
+                        <span class="card-title">ICS 2023 Review Chap 2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -903,7 +961,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-03
                             </span>
                         <span class="publish-author">
                             
@@ -1174,11 +1232,6 @@
                     class="white-color"></span>&nbsp;次
             </span>
             
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
             
             <br>
             

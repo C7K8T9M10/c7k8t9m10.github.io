@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Other Things You Need to Know to Pass the Exam, Eddie Wong">
+    <meta name="keywords" content="ICS 2023 Review Chap 9, Eddie Wong">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Other Things You Need to Know to Pass the Exam | Eddie Wong</title>
+    <title>ICS 2023 Review Chap 9 | Eddie Wong</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Other Things You Need to Know to Pass the Exam</h1>
+                    <h1 class="description center-align post-title">ICS 2023 Review Chap 9</h1>
                 </div>
             </div>
         </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-12-01
+                    2023-11-28
                 </div>
                 
 
@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    50
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    20 分
                 </div>
                 
 
@@ -496,10 +496,188 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Other-Things-You-Need-to-Know-to-Pass-the-Exam"><a href="#Other-Things-You-Need-to-Know-to-Pass-the-Exam" class="headerlink" title="Other Things You Need to Know to Pass the Exam"></a>Other Things You Need to Know to Pass the Exam</h1><p>Control Unit and Processing Unit 合称CPU</p>
-<p>CC：condition code也就是状态码</p>
-<p><code>TRAP</code>：中文是<strong>自陷</strong>或<strong>软中断</strong>，其本质为用户程序向OS申请帮助。</p>
-<p><img src="/Other%20Things%20You%20Need%20to%20Know%20to%20Pass%20the%20Exam%205d8b87e58f4949f4a863c2517980f023/Untitled.png" alt="Untitled"></p>
+                <h1 id="Review-Chap-9"><a href="#Review-Chap-9" class="headerlink" title="Review Chap 9"></a>Review Chap 9</h1><h3 id="Privilege-Priority-and-the-Memory-Address-Space"><a href="#Privilege-Priority-and-the-Memory-Address-Space" class="headerlink" title="Privilege,Priority, and the Memory Address Space"></a>Privilege,Priority, and the Memory Address Space</h3><p><strong>Privilege</strong>: it is about the right to do something, such as execute a particular instruction or access a particular memory location.(<strong>NOTE:</strong> not all computer programs have the right to execute all instructions.)</p>
+<p>To make the system go correctly, we designate every computer system as either privileged or unprivileged. We often say supervisor privilege to indicate privileged. We say a program is executing in <strong>Supervisor</strong> mode to indicate <strong>privileged</strong>, or <strong>User</strong> mode to indicate <strong>unprivileged</strong>.</p>
+<ul>
+<li>If a program is executing in Supervisor mode, it can execute all instructions and access all of memory.</li>
+<li>If a program is executing in User mode, it cannot.</li>
+</ul>
+<p><strong>Priority</strong>: it is about the urgency of a program to execute. This allows programs of greater urgency to interrupt programs of lesser urgency.</p>
+<p><strong>Two Orthogonal Notions</strong></p>
+<p>We said privilege and priority are two orthogonal notions, meaning they have nothing to do with each other.</p>
+<p><strong>The Processor Status Register</strong></p>
+<p>It contains the privilege and priority assigned to that program.</p>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled.png" alt="Untitled"></p>
+<p>Bit 15 specifies the privilege, where <strong>PSR[15]&#x3D;0 means supervisor privilege, and PSR[15]&#x3D;1 means unprivileged</strong>. Bits[10:8] specify the priority level of the program. The highest level is 7 and the lowest level is 0. Besides, it also contains the condition code.</p>
+<p><strong>Organization of Memory</strong></p>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>Locations x0000 to x2FFF are privileged memory locations. They contain the various data structures and code of the operating system. They require supervisor privilege to access. They are referred to as <strong>system space</strong>.</li>
+<li><strong>Supervisor Stack</strong> is controlled by the operating system and requires <strong>supervisor</strong> privilege to access. It has a stack pointer called <strong>SSP</strong> (Supervisor Stack Pointer).</li>
+<li>Locations x3000 to xFDFF are unprivileged memory locations. Supervisor privilege is not required to access these memory locations. All user programs and data use this region of memory. The region is often referred to as <strong>user space</strong>.</li>
+<li><strong>User Stack</strong> is controlled by the user program and does <strong>not require privilege</strong> to access. It has a stack pointer called <strong>USP</strong> (User Stack Pointer).</li>
+<li>Addresses xFE00 to xFFFF do not correspond to memory locations at all. That is, the last address of a memory location is xFDFF. Addresses xFE00 to xFFFF are used to identify registers that take part in input and output functions and some special registers associated with the processor.</li>
+<li>PSR ~ xFFFC</li>
+<li>processor’s <strong>M</strong>aster <strong>C</strong>ontrol <strong>R</strong>egister (<strong>MCR</strong>)(clock cycle switch) ~ xFFFE</li>
+<li><strong>KBSR</strong> <strong>KBDR</strong> <strong>DSR</strong> <strong>DDR</strong> …</li>
+<li>这些并不是实际内存，而是别映射过来的 <strong>Memory-mapped I&#x2F;O</strong> ！</li>
+<li>Since a program can only execute in <strong>Supervisor</strong> mode or <strong>User</strong> mode at any one time, only <strong>one</strong> of the two stacks is active at any one time.</li>
+<li><strong>R6</strong> is generally used as the <strong>SP</strong> for the active stack. Two registers, <strong>Saved_SSP</strong> and <strong>Saved_USP</strong>, are provided to save the <strong>SP</strong> not in use. When privilege changes, for example, from <strong>Supervisor</strong> mode to <strong>User</strong> mode, the <strong>SP</strong> is stored in <strong>Saved_SSP</strong>, and the <strong>SP</strong> is loaded from <strong>Saved_USP</strong>.</li>
+</ul>
+<h3 id="Input-Output"><a href="#Input-Output" class="headerlink" title="Input&#x2F;Output"></a><strong>Input</strong>&#x2F;<strong>Output</strong></h3><ul>
+<li>Even the simplest I&#x2F;O devices usually need at least <strong>two</strong> registers: one to hold the <strong>data</strong> being transferred between the device and the computer, and one to indicate <strong>status information</strong> about the device.</li>
+<li>An example of status information is whether the device is <strong>available</strong> or is it still <strong>busy</strong> processing the most recent I&#x2F;O task.</li>
+<li>Some Basic <strong>Characteristics</strong> of I&#x2F;O</li>
+</ul>
+<p><strong>Memory-Mapped I&#x2F;O</strong> vs. <strong>Special I&#x2F;O Instructions</strong></p>
+<ul>
+<li>The I&#x2F;O device registers are mapped to a set of addresses that are allocated to I&#x2F;O device registers rather than to memory locations. Hence the name <strong>memory-mapped I&#x2F;O</strong>.</li>
+<li>Special I&#x2F;O Instructions are not so liked.</li>
+</ul>
+<p><strong>Asynchronous</strong> vs. <strong>Synchronous</strong></p>
+<ul>
+<li>Most I&#x2F;O is carried out at speeds very much <strong>slower</strong> than the speed of the processor.</li>
+<li>The point is that I&#x2F;O devices usually operate at speeds very different from that of a microprocessor, and not in lockstep. We call this latter characteristic <strong>asynchronous</strong>. Most interaction between a processor and I&#x2F;O is asynchronous.</li>
+<li>To control processing in an asynchronous world requires some <strong>protocol</strong> or <strong>handshaking mechanism</strong>. So it is with our keyboard and monitor.</li>
+<li>In the case of the keyboard, we will need a one-bit status register, called a <strong>flag</strong>, to indicate if someone has or has not typed a character.</li>
+<li>In the case of the monitor, we will need a one-bit status <strong>register</strong> to indicate whether or not the most recent character sent to the monitor has been displayed, and so the monitor can be given another character to display.</li>
+<li>These flags are the simplest form of <strong>synchronization</strong>.</li>
+<li>By examining the <strong>ready bit</strong> before reading a character, the computer can tell whether it has already read the last character typed.</li>
+</ul>
+<p><strong>Interrupt-Driven</strong> vs. <strong>Polling</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.javatpoint.com/trap-vs-interrupt-in-operating-system">🔗</a> Difference between an interrupt and a trap.</li>
+<li>The processor, which is computing, and the typist, who is typing, are two <strong>separate</strong> entities.</li>
+<li>The issue of <strong>interrupt-driven</strong> vs. <strong>polling</strong> is the issue of who controls the interaction.</li>
+<li><strong>Interrupt-driven</strong> acts like that the typist will tell the processor that there are some inputs.</li>
+<li><strong>Polling</strong> acts like that the processor will interrogate typist again and again whether there have some inputs.</li>
+<li>中断是每当监控的设备发生变化，比如有输入的时候，就执行中断相关的代码片段；而轮询是指你主动去不断请求，检测监控的设备是否发生变化。</li>
+</ul>
+<h3 id="Input-from-the-Keyboard"><a href="#Input-from-the-Keyboard" class="headerlink" title="Input from the Keyboard"></a>Input from the Keyboard</h3><p>Basic Input Registers (<strong>KBDR</strong> and <strong>KBSR</strong>): <strong>KBD</strong>ata<strong>R</strong> &amp; <strong>KBS</strong>tatus<strong>R</strong></p>
+<ul>
+<li>In the case of <strong>KBDR</strong>, bits [7:0] are used for the <strong>data</strong>, and bits [15:8] contain <strong><code>x00</code></strong>.</li>
+<li>In the case of <strong>KBSR</strong>, bit [15] contains the synchronization mechanism, that is, the ready bit; and bit[14] is the interrupt enable bit, depending on whether or not the processor wants to give the I&#x2F;O device the right to <strong>request service</strong>.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202114753-8d54fc36-b428-4df3-9d29-c9dd39be0894.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202114753-8d54fc36-b428-4df3-9d29-c9dd39be0894.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>In LC-3, address <strong><code>xFE02</code></strong> is assigned to the <strong>KBDR</strong>; address <strong><code>xFE00</code></strong> is assigned to the <strong>KBSR</strong>.</li>
+</ul>
+<p>The Basic <strong>Input Service Routine</strong></p>
+<ul>
+<li>When type in something, <strong>KBDR</strong> is updated and <strong>KBSR</strong> is set to<code>1</code>. And <strong>KBDR</strong> can’t be changed until <strong>KBSR</strong> is reset and the data in <strong>KBDR</strong> is read. So that each character can be loaded at least one time.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1663250915942-f266facd-a29d-4782-8ae5-45eef8dec8e4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1663250915942-f266facd-a29d-4782-8ae5-45eef8dec8e4.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_12%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202521661-df28eac7-1015-4b08-94dc-f6cf5d702098.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_27,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202521661-df28eac7-1015-4b08-94dc-f6cf5d702098.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_27%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>Implementation of Memory-Mapped Input</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202840874-c88d4ccf-97ac-448a-9198-b5f86ffb8c53.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202840874-c88d4ccf-97ac-448a-9198-b5f86ffb8c53.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_35%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<h3 id="Output-to-the-Monitor-In-fact-very-similar-to-the-input"><a href="#Output-to-the-Monitor-In-fact-very-similar-to-the-input" class="headerlink" title="Output to the Monitor(In fact very similar to the input)"></a>Output to the Monitor(In fact very similar to the input)</h3><p>DDR and DSR replace KBDR and KBSR.</p>
+<ul>
+<li>In the case of <strong>DDR</strong>, bits [7:0] are used for data, and bits [15:8] contain <strong><code>x00</code></strong>.</li>
+<li>In the case of <strong>DSR</strong>, bit [15] contains the synchronization mechanism, that is, the ready bit.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202935420-229bae47-be40-4e58-bb94-286e192a3cfb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658202935420-229bae47-be40-4e58-bb94-286e192a3cfb.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>In LC-3, address <strong><code>xFE06</code></strong> is assigned to the <strong>DDR</strong>; address <strong><code>xFE04</code></strong> is assigned to the <strong>DSR</strong>.</li>
+</ul>
+<p>The Basic Output Service Routine</p>
+<ul>
+<li>When display something, <strong>DDR</strong> is updated and <strong>DSR</strong> is cleared. And <strong>DDR</strong> can’t be changed until <strong>DSR</strong> is set to <code>1</code> and the data in <strong>DDR</strong> is printed.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658203122513-1181fcb5-6e1f-4595-b41a-1a6c6b0159ff.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_32,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658203122513-1181fcb5-6e1f-4595-b41a-1a6c6b0159ff.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_32%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p>Implementation of Memory-Mapped Output</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658203253977-22ace587-a16b-48c9-a471-e64ff8c57ec8.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658203253977-22ace587-a16b-48c9-a471-e64ff8c57ec8.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled%202.png" alt="Untitled"></p>
+<h3 id="Operating-System-Service-Routines-LC-3-Trap-Routines"><a href="#Operating-System-Service-Routines-LC-3-Trap-Routines" class="headerlink" title="Operating System Service Routines (LC-3 Trap Routines)"></a>Operating System Service Routines (LC-3 Trap Routines)</h3><ul>
+<li>In general it is ill-advised to give user programmers access to these registers. That is why the addresses of hardware registers are part of the privileged memory address space and accessible only to programs that have supervisor privilege.</li>
+<li>The simpler solution, as well as the safer solution to the problem of user programs requiring I&#x2F;O, involves the**<code>TRAP</code>** instruction and the operating system, which of course has supervisor privilege.</li>
+<li>It (<strong><code>TRAP</code></strong>) allows the user programmer to not have to know the gory details of I&#x2F;O discussed earlier in this chapter. In addition, it protects user programs from the consequences of other inept user programmers.</li>
+<li>The user program uses the <strong><code>TRAP</code></strong> instruction to request the operating system to perform the task on behalf of the user program. The operating system takes control of the computer, handles the request specified by the <strong><code>TRAP</code></strong> instruction, and then returns control back to the user program at location <code>x4001</code>. As we said at the start of this chapter, we usually refer to the request made by the user program as a <strong>system call</strong> or a <strong>service call</strong>.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658290174311-dc463c14-710d-49e8-8e28-5684c506a62e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658290174311-dc463c14-710d-49e8-8e28-5684c506a62e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><strong>The Trap Mechanism</strong></p>
+<ul>
+<li><strong>A set of service routines</strong> executed on behalf of user programs by the operating system. These are part of the operating system and start at arbitrary addresses in system space. The LC-3 was designed so that up to 256 service routines can be specified. Table A.2 in Appendix A contains the LC-3’s current complete list of operating system service routines.</li>
+<li><strong>A table of the starting addresses</strong> of these 256 service routines. This table is stored in memory locations x0000 to x00FF. The table is referred to by various names by various companies. One company calls this table the System Control Block. Another company calls it the Trap Vector Table. Figure 9.10 shows the Trap Vector Table of the LC-3, with specific starting addresses highlighted. Among the starting addresses are the one for the character output service routine (memory location x0420), which is stored in memory location x0021, the one for the keyboard input service routine (location x04A0), stored in location x0023, and the one for the machine halt service routine (location x0520), stored in location x0025.</li>
+<li><strong>The <code>TRAP</code> instruction</strong>. When a user program wishes to have the operating system execute a specific service routine on behalf of the user program, and then return control to the user program, the user program uses the TRAP instruction.</li>
+<li><strong>A linkage</strong> back to the user program. The service routine must have a mechanism for returning control to the user program.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658292177168-67358cc1-7bcc-4dc1-b6ca-fee7665db839.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658292177168-67358cc1-7bcc-4dc1-b6ca-fee7665db839.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_10%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><strong>The TRAP Instruction</strong></p>
+<ul>
+<li>The TRAP instruction causes the service routine to execute by:</li>
+</ul>
+<ol>
+<li>changing the <strong><code>PC</code></strong> to the starting address of the relevant service routine on the basis of its <strong>trap vector</strong>;</li>
+<li>providing a way to get back to the program that executed the <strong><code>TRAP</code></strong> instruction. The “way back” is referred to as a <strong>linkage</strong>;</li>
+</ol>
+<ul>
+<li>As you know, the <strong><code>TRAP</code></strong> instruction is made up of two parts: the <strong><code>TRAP</code></strong> opcode 1111 and the <strong>trap vector</strong> (bits [7:0]), which identifies the service routine the user program wants the operating system to execute on its behalf. Bits [11:8] must be zero.</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658292696904-1ad69603-924c-41f3-a225-6a340486d062.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_24,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658292696904-1ad69603-924c-41f3-a225-6a340486d062.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_24%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>The EXECUTE phase of the TRAP instruction’s instruction cycle does three things:</li>
+</ul>
+<ol>
+<li>The <strong>PSR</strong> and <strong>PC</strong> are both pushed onto the system stack. Since the PC was incremented during the FETCH phase of the TRAP instruction’s instruction cycle, the <strong>return linkage</strong> is automatically saved in the <strong>PC</strong>. When control returns to the user program, the <strong>PC</strong> will automatically be pointing to the instruction following the TRAP instruction. Note that the program requesting the trap service routine can be running either in <strong>Supervisor</strong> mode or in <strong>User</strong> mode. If in User mode, R6, the stack pointer, is pointing to the user stack. Before the <strong>PSR</strong> and <strong>PC</strong> can be pushed onto the system stack, the current contents of R6 must be stored in Saved <strong>USP</strong>, and the contents of Saved <strong>SSP</strong> loaded into R6.</li>
+<li>PSR[15] is set to 0, since the service routine is going to require supervisor privilege to execute. PSR[10:8] are left unchanged since the priority of the TRAP routine is the same as the priority of the program that requested it.</li>
+<li>The 8-bit trap vector is zero-extended to 16 bits to form an address that corresponds to a location in the <strong>Trap Vector Table</strong>. For the trap vector x23, that address is x0023. Memory location x0023 contains x04A0, the starting address of the TRAP x23 service routine. The PC is loaded with x04A0, completing the instruction cycle.</li>
+</ol>
+<ul>
+<li>The <strong><code>RTI</code></strong> Instruction: To Return Control to the Calling Program</li>
+<li>The <strong><code>RTI</code></strong> instruction (opcode &#x3D; 1000, with no operands) pops the top two values on the system stack into the <strong>PC</strong> and <strong>PSR</strong>. Since the <strong>PC</strong> contains the address following the address of the TRAP instruction, control returns to the user program at the correct address.</li>
+<li>Finally, once the <strong>PSR</strong> has been popped off the system stack, **<code>PSR[15]</code>**must be examined to see whether the processor was running in <strong>User</strong> mode or <strong>Supervisor</strong> mode when the TRAP instruction was executed.</li>
+</ul>
+<p>Trap Routines for Handling I&#x2F;O</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658369283680-182086d8-2a9d-49b2-870b-f7c42c1a68d2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658369283680-182086d8-2a9d-49b2-870b-f7c42c1a68d2.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_13%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658369308415-c0c6ccd0-c934-44ce-85ae-be317bdca8d1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1658369308415-c0c6ccd0-c934-44ce-85ae-be317bdca8d1.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
+<ul>
+<li>A Trap Routine for Halting the Computer</li>
+</ul>
+<h3 id="Interrupts-and-Interrupt-Driven-I-O"><a href="#Interrupts-and-Interrupt-Driven-I-O" class="headerlink" title="Interrupts and Interrupt-Driven I&#x2F;O"></a>Interrupts and Interrupt-Driven I&#x2F;O</h3><p>The essence of interrupt-driven I&#x2F;O is the notion that an I&#x2F;O device that may or may not have anything to do with the program that is running can(1) force the running program to stop,(2) have the processor execute a program that carries out the needs of the I&#x2F;O device, and then(3) have the stopped program resume execution as if nothing had happened.</p>
+<p>Interrupt-driven I&#x2F;O do not waste time during input and output, instead, it can do useful work until it is notified that some I&#x2F;O device needs attention.</p>
+<p><strong>Two parts to the process:</strong></p>
+<ul>
+<li>The mechanism that enables an I&#x2F;O device to interrupt the processor.</li>
+<li>The mechanism that handles the interrupt request.</li>
+</ul>
+<p><strong>Part I:</strong></p>
+<p><strong>Three things must be true to allow an I&#x2F;O device to interrupt the running program:</strong></p>
+<ol>
+<li>The I&#x2F;O device <strong>must want</strong> service: Check the ready bit in KBSR or DSR to confirm.</li>
+<li>The device <strong>must have the right</strong> to request the service: that is the interrupt enable (IE) bit. In KBSR and DSR it is in bit[14]. The i<strong>nterrupt request signal from the I&#x2F;O device</strong> is the logical AND of the IE bit and the ready bit.</li>
+</ol>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled%203.png" alt="Untitled"></p>
+<ol>
+<li>The device request <strong>must be more urgent</strong> than what the processor is currently doing: it means the priority of the request must be higher than the priority of the program it wishes to interrupt.</li>
+</ol>
+<p><strong>The INT signal</strong></p>
+<p>To stop the processor from continuing execution of its currently running program and service an interrupt request, the INT signal must be asserted.</p>
+<p>The picture shows the status registers of several devices operating at various priority levels (PL). Any device that has bits [14] and [15] both set asserts its interrupt request signal. The interrupt request signals are input to a priority encoder, a combinational logic structure that selects the highest priority request from all those asserted. If the PL of that request is higher than the PL of the currently executing program, the INT signal is asserted.</p>
+<p><img src="/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/Untitled%204.png" alt="Untitled"></p>
+<p>Finally, the test to enable the processor to stop and handle the interrupt. Recall from Chapter 4 that the instruction cycle continually sequences through the phases of the instruction cycle (FETCH, DECODE, EVALUATE ADDRESS, FETCH OPERAND, EXECUTE, and STORE RESULT). Each instruction changes the state of the computer, and that change is completed at the end of the instruction cycle for that instruction. That is, in the last clock cycle before the computer returns to the FETCH phase for the next instruction, the computer is put in the state caused by the complete execution of the current instruction.<br>Interrupts can happen at any time. They are asynchronous to the synchronous finite-state machine controlling the computer. For example, the interrupt signal could occur when the instruction cycle is in its FETCH OPERAND phase. If we stopped the currently executing program when the instruction cycle was in its FETCH OPERAND phase, we would have to keep track of what part of the current instruction has executed and what part of the current instruction still has work to do. It makes much more sense to ignore interrupt signals except when we are at an instruction boundary; that is, the current instruction has completed, and the next instruction has not yet started. Doing that means we do not have to worry about partially executed instructions, since the state of the computer is the state created by the completion of the current instruction, period!<br>The additional logic to test for the interrupt signal is to augment the last state of the instruction cycle for each instruction with a test. Instead of always going from the last state of one instruction cycle to the first state of the FETCH phase of the next instruction, the next state depends on the INT signal. If INT is not asserted, then it is business as usual, with the control unit returning to the FETCH phase to start processing the next instruction. If INT is asserted, then the next state is the first state of Part II, handling the interrupt request.</p>
+<p><strong>Part II:</strong></p>
+<p>Handling the interrupt goes through 3 stages:</p>
+<ol>
+<li>Initiate the interrupt.</li>
+<li>Service the interrupt.</li>
+<li>Return from the interrupt.</li>
+</ol>
+<p>First: Initiate</p>
+<p>There are two things to do:</p>
+<ol>
+<li>Save the state of the interrupted program: The first step is to save enough of the state of the program that is running so that it can continue where it left off after the I&#x2F;O device request has been satisfied. That means storing current PC and PSR(These are the only state information LC-3 need to store during the execution).They are saved on the supervisor stack in the same way that PC and PSR are saved when a TRAP instruction is executed.</li>
+<li>Load the state of the interrupt service routine:</li>
+</ol>
+<p>Once the state of the interrupted program has been safely saved on the supervisor stack, the second step is to load the PC and PSR of the interrupt service routine. Interrupt service routines are similar to the trap service routines we have already discussed. They are program fragments stored in system space. They service interrupt requests.</p>
+<p>Most processors use the mechanism of vectored interrupts. You are familiar with this notion from your study of the trap vector contained in the TRAP instruction. In the case of interrupts, the eight-bit vector is provided by the device that is requesting the processor be interrupted. That is, the I&#x2F;O device transmits to the processor an eight-bit interrupt vector along with its interrupt request signal and its priority level. The interrupt vector corresponding to the highest priority interrupt request is the one supplied to the processor. It is designated INTV.</p>
+<p>If the interrupt is taken, the processor expands the 8-bit interrupt vector (INTV) to form a 16-bit address, which is an entry into the Interrupt Vector Table. You know that the Trap Vector Table consists of memory locations x0000 to x00FF, each containing the starting address of a trap service routine. The Interrupt Vector Table consists of memory locations x0100 to x01FF, each containing the starting address of an interrupt service routine. The processor loads the PC with the contents of the location in the Interrupt Vector Table corresponding to the address formed by expanding the interrupt vector INTV.</p>
+<p>The PSR is loaded as follows: Since no instructions in the service routine have yet executed, PSR[2:0] contains no meaningful information. We arbitrarily load it initially with 010. Since the interrupt service routine runs in privileged mode, PSR[15] is set to 0. PSR[10:8] is set to the priority level associated with the interrupt request.</p>
+<p>This completes the initiation phase, and the interrupt service routine is ready to execute.</p>
+<p>Second: Service(OMIT)</p>
+<p>Finally: Return</p>
+<p>The last instruction in every interrupt service routine is RTI, which stands for “return from trap or interrupt”. When the processor finally accesses the RTI instruction, all the requirements of the I&#x2F;O device have been taken care of.</p>
 
                 
             </div>
@@ -677,6 +855,28 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk5NC8zNjQ1Nw==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
 
@@ -693,24 +893,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/12/02/ICS%202023%20Review%20Chap%201%202f9e9fc7a6224dbcb7db7a95853e3bcf/">
+                <a href="/2023/12/01/other-things-you-need-to-know-to-pass-the-exam-5d8b87e58f4949f4a863c2517980f023/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ICS 2023 Review Chap 1">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Other Things You Need to Know to Pass the Exam">
                         
-                        <span class="card-title">ICS 2023 Review Chap 1</span>
+                        <span class="card-title">Other Things You Need to Know to Pass the Exam</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            如何通过计概期末考
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-12-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-12-01
                         </span>
                         <span class="publish-author">
                             
@@ -746,13 +946,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/28/Review%20Chap%209%204e7fd7f41df64af38e6bea1c5827e4ec/">
+                <a href="/2023/11/20/review-chap-8-4f43e889765545ecb6d7554902d57891/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="ICS 2023 Review Chap 9">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="ICS 2023 Review Chap 8">
                         
-                        <span class="card-title">ICS 2023 Review Chap 9</span>
+                        <span class="card-title">ICS 2023 Review Chap 8</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -763,7 +963,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-20
                             </span>
                         <span class="publish-author">
                             
@@ -1034,11 +1234,6 @@
                     class="white-color"></span>&nbsp;次
             </span>
             
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
             
             <br>
             

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ICS 2023 Review Chap 6&amp;7, Eddie Wong">
+    <meta name="keywords" content="大学第一年对自己的一些总结（2023.07）, Eddie Wong">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ICS 2023 Review Chap 6&amp;7 | Eddie Wong</title>
+    <title>大学第一年对自己的一些总结（2023.07） | Eddie Wong</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ICS 2023 Review Chap 6&amp;7</h1>
+                    <h1 class="description center-align post-title">大学第一年对自己的一些总结（2023.07）</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ICS/">
-                                <span class="chip bg-color">ICS</span>
+                            <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB/">
+                                <span class="chip bg-color">大学生活</span>
                             </a>
                         
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
-                                <span class="chip bg-color">计算机系统概论</span>
+                            <a href="/tags/%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">总结</span>
                             </a>
                         
                     </div>
@@ -447,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
-                                课程笔记
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                随笔
                             </a>
                         
                     </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-14
+                    2023-07-02
                 </div>
                 
 
@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    648
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -496,63 +496,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Review-Chap-6-7"><a href="#Review-Chap-6-7" class="headerlink" title="Review Chap 6&amp;7"></a>Review Chap 6&amp;7</h1><p>Away from machine codes, we are going to talk about programming languages. There are high-level and low-level languages. High-level languages tend to be ISA independent.</p>
-<p>Assembly language is a low-level language. Low-level languages are ISA dependent. In fact, it is usually the case that each ISA has only one assembly language.</p>
-<ul>
-<li><em>Symbolic Addresses :</em> meaningful symbolic names to memory locations, such as SUM and PRODUCT, rather than use the memory locations’ 16-bit addresses. This makes it easier to differentiate which memory location is keeping track of a SUM and which memory location is keeping track of a PRODUCT.</li>
-</ul>
-<p>An Assembly Language Program</p>
-<ul>
-<li>The translation <strong>program</strong> is called an <strong>assembler</strong>, and the translation <strong>process</strong> is called <strong>assembly</strong>.</li>
-<li>In LC-3 ISA, an instruction in assembly language consists of four parts:</li>
-<li><code>Label Opcode Operands ; Comment</code></li>
-<li><em><strong>Label</strong> &amp; <strong>Comment</strong> are optional, <strong>Opcode</strong> &amp; <strong>Operands</strong> are <strong>mandatory</strong></em>.</li>
-</ul>
-<p><strong>Opcode</strong> &amp; <strong>Operands</strong></p>
-<ul>
-<li>The <strong>Opcode</strong> is a symbolic name for the opcode of the corresponding LC-3 instruction.</li>
-<li>The number of operands depends on the operation being performed.</li>
-<li>A literal value must contain a symbol identifying the representation base of the number. We use <code>#</code> for decimal, <code>x</code> for hexadecimal, and <code>b</code> for binary.</li>
-</ul>
-<p><strong>Labels</strong></p>
-<ul>
-<li>Labels are symbolic names that are used to <strong>identify memory locations</strong> that are referred to explicitly in the program.</li>
-<li>Label 实际上是给特定内存的一个 alias，因此你可以用它标记 instructions，也可以用它索引 data！</li>
-<li>In LC-3 assembly language, a label consists of from 1 to 20 <strong>alphanumeric characters</strong> (i.e., each character is a capital or lower-case letter of the English alphabet, or a decimal digit), starting with a letter of the alphabet except <strong>reserved words</strong>.</li>
-<li>There are two reasons for explicitly referring to a memory location:</li>
-</ul>
-<ol>
-<li>The location is the <strong>target</strong> of a <strong>branch</strong> instruction.</li>
-<li>The location contains a <strong>value</strong> that is <strong>loaded</strong> or <strong>stored</strong>.</li>
-</ol>
-<p><strong>Comments</strong></p>
-<ul>
-<li>The purpose of comments is to make the program more comprehensible to the human reader.</li>
-<li>It is important to make comments that provide additional insight and do not just restate the obvious.</li>
-<li>Another purpose of comments is to make the visual presentation of a program easier to understand.</li>
-</ul>
-<p><strong>Pseudo-Ops(Assembler Directives)</strong></p>
-<ul>
-<li>.ORIG: it tells the assembler where in memory to place the LC-3 program. e.g.: .ORIG x3000</li>
-<li>.FILL: it tells the assembler to set aside the next location in the program and initialize it with the value of the operand. The value can be either a number or a label.</li>
-<li>.BLKW: it tells the assembler to set aside some number of sequential memory locations(i.e., a BLocK of Words) in the program.</li>
-<li>.STRINGZ: it tells the assembler to initialize a sequence of n+1 memory locations.</li>
-</ul>
-<p>It would result in the assembler initializing locations <code>x3010</code> through <code>x301D</code> to the following values:</p>
-<p><img src="/Review%20Chap%206&7%20e66b76be92614538a66fb9a1d93b9783/Untitled.png" alt="Untitled"></p>
-<ul>
-<li>.END: it tells the assembler it has reached the end of the program and need not even look at anything after it. (In fact, .END does not exist at the time of execution, it is simply a delimiter)</li>
-</ul>
-<h3 id="The-Assembly-Process"><a href="#The-Assembly-Process" class="headerlink" title="The Assembly Process"></a>The Assembly Process</h3><p>Introduction</p>
-<ul>
-<li>If you have available an LC-3 assembler, you can cause it to translate your assembly language program into a machine language program by executing an appropriate command. In the LC-3 assembler that is generally available via the web, that command is assemble, and it requires as an argument the filename of your assembly language program.</li>
-<li>eg: <code>assemble solution1.asm outfile</code></li>
-</ul>
-<p>A Two-Pass Process</p>
-<ul>
-<li>The objective of the first pass is to <strong>identify</strong> the actual binary <strong>addresses</strong> corresponding to the symbolic names (or <strong>labels</strong>). This set of correspondences is known as the <strong>symbol table</strong>.</li>
-<li>In pass 1, we <strong>construct</strong> the <strong>symbol table</strong>. In pass 2, we <strong>translate</strong> the individual <strong>assembly language instructions</strong> into their corresponding <strong>machine language instructions</strong>.</li>
-</ul>
+                <h1 id="大学第一年对自己的一些总结（2023-07）"><a href="#大学第一年对自己的一些总结（2023-07）" class="headerlink" title="大学第一年对自己的一些总结（2023.07）"></a>大学第一年对自己的一些总结（2023.07）</h1><p>大学的第一个学年，随着今天下午最后一门课的出分而宣告结束。虽然我暑假还有一门短学期课要上到七月底，不过那已经属于是下个学年的课了。<br>所以说我就有时间思考一下大一这一年，我干了什么，收获了什么，失去了什么。<br>我记得我第一天来到求是园的场景，从东二门进去，跟我爸和我哥说再见，拖着行李上了接驳车，下车，走进宿舍，整个的过程中，我全程注视着窗外或者看着四周，看着这个我高中三年从来没有想过能够考上的学校。<br>然后我进了寝室，掏钥匙，开寝室门，当水泥地面和简陋的上下铺映入眼帘之时，我脱口而出的是“操”。<br>合着我进了浙大说的第一个字是个脏字。<br>不过很快我就接受了住宿条件，和舍友熟络，认识新的班集体，然后是军训。<br>军训的过程我就不细说了，我的记忆也比较模糊，只记得最后拿了个3.9，正当我觉得还行的时候，一刷朵朵，发现还有人正因为军训没满绩而闷闷不乐，我瞬间就不淡定了。<br>我开始第一波初步焦虑，看着周围的人个个都像卷王；不过很快就停止了：我发现至少在微积分这一门课上，比我菜的人还是大有人在的，我大可不必这么卑微，这么焦虑。学好了，那就好；学差了，我也不是最差；就算我是最差的那个，那也只能说明我有充足的上升空间。再说了，当倒数几名对我又不是新鲜事，高中我也不是没当过。<br>上学期的生活细节早就记不清了，就记得一些记忆碎片：比如东三的核酸检测，比如线性代数期中不及格，比如在北教和足协的同志们看世界杯，比如被拉去桐庐隔离，等等。然后在12月10号的四级考试以后，我迅速润回德州。<br>考试延后，寒假我不说是卷了，至少也能说是认真学了，大一上学期的GPA好歹有个4.2吧。<br>到了大一下，我踌躇满志爆选30+学分，选的课也有大英五这样听名就让人闻风丧胆的课。然后就在我以为一切尽在掌握之中的时候，一切就不出意外地出意外了。<br>一门程序设计课，队友不给力，原本确定的选题任务未能在规定时间内完成，我反倒是在规定时间内精神状态崩溃，上课也不去上，作业也写不动，甚至都想重开了，在一周多的时间里，我不仅一行代码都敲不动，其他课也学不进去，这就让我本就薄弱的基础课雪上加霜。<br>这就是我第二波焦虑开始的时候：看着我认识的人一个个成绩突飞猛进得心应手，甚至有时间搞起了ACM种种，我却被一个简单的程序设计课困住动弹不得，甚至濒临挂科，我对自己的怀疑和卑微感又上升了一个档次，看着学院发的院衫，我一度怀疑我配不配把它穿在身上。<br>考试周结束，我看着我的GPA慢慢下降，最后稳定在一个低的不能再低的数字，我突然释怀了。<br>大学生活又不是只有GPA，我大可以在别的地方证明自己配得上当浙大人，配得上计院。学习不是一切，社团活动、体育锻炼、感情生活，每一个都可以过得很充实，都可以丰富生活。<br>所以说，大学一年，我收获了什么？<br>我收获了知识，毫无疑问，虽然掌握程度和其他人亦有差距；收获了朋友，很多朋友；收获了经验，无论是转播足球比赛的经验还是一个人三天solo一个大程序+实验报告的经验，都是好的。<br>唯一美中不足的是没有收获爱情（bushi）。<br>我接下来要干什么？<br>GPA不是全部，我只想好好过完大学后面三年，底线是学到东西并且不挂科，上限那我也不知道。<br>怎么形容我理想中的大学生活？快乐？不准确，充实？也不准确。反倒是我那个充满了戏谑色彩的微信昵称能形容我的预想：准时不早退。<br>准时到达大学生活的每一个重要节点，不草草退场，不崩溃断线，够了，我只求准时不早退。<br>Eddie<br>7月3日晚写于浙江大学紫金港校区碧峰</p>
 
                 
             </div>
@@ -567,12 +511,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/ICS/">
-                                    <span class="chip bg-color">ICS</span>
+                                <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB/">
+                                    <span class="chip bg-color">大学生活</span>
                                 </a>
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
-                                    <span class="chip bg-color">计算机系统概论</span>
+                                <a href="/tags/%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">总结</span>
                                 </a>
                             
                         </div>
@@ -730,6 +674,28 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk5NC8zNjQ1Nw==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
 
@@ -746,31 +712,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/20/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/">
+                <a href="/2023/10/15/after-successful/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="ICS 2023 Review Chap 8">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="榜上留名之后">
                         
-                        <span class="card-title">ICS 2023 Review Chap 8</span>
+                        <span class="card-title">榜上留名之后</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在某些时刻会感觉到自己的迷茫，我谈不上年少成名，但是就不禁想到那个曾经大红大紫的少年……
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-15
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    课程笔记
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    随笔
                                 </a>
                             
                             
@@ -780,12 +746,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ICS/">
-                        <span class="chip bg-color">ICS</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
-                        <span class="chip bg-color">计算机系统概论</span>
+                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB/">
+                        <span class="chip bg-color">大学生活</span>
                     </a>
                     
                 </div>
@@ -799,33 +761,29 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/11/Review%20Chap%205%20ddcbb3165ab44277adc7d7cbc629f81c/">
+                <a href="/2023/01/01/first-blog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="ICS 2023 Review Chap 5">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="欢迎页">
                         
-                        <span class="card-title">ICS 2023 Review Chap 5</span>
+                        <span class="card-title">欢迎页</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            欢迎
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    课程笔记
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Eddie Wong
                             
                         </span>
                     </div>
@@ -833,12 +791,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ICS/">
-                        <span class="chip bg-color">ICS</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
-                        <span class="chip bg-color">计算机系统概论</span>
+                    <a href="/tags/Welcome/">
+                        <span class="chip bg-color">Welcome</span>
                     </a>
                     
                 </div>
@@ -1087,11 +1041,6 @@
                     class="white-color"></span>&nbsp;次
             </span>
             
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
             
             <br>
             

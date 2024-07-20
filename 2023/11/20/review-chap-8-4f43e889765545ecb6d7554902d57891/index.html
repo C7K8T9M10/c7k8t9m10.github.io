@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ICS 2023 Review Chap 4, Eddie Wong">
+    <meta name="keywords" content="ICS 2023 Review Chap 8, Eddie Wong">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ICS 2023 Review Chap 4 | Eddie Wong</title>
+    <title>ICS 2023 Review Chap 8 | Eddie Wong</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ICS 2023 Review Chap 4</h1>
+                    <h1 class="description center-align post-title">ICS 2023 Review Chap 8</h1>
                 </div>
             </div>
         </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-09
+                    2023-11-20
                 </div>
                 
 
@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    7 分
                 </div>
                 
 
@@ -496,152 +496,65 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Review-Chap-4"><a href="#Review-Chap-4" class="headerlink" title="Review Chap 4"></a>Review Chap 4</h1><p>To get a task done by a computer, we need two things: (a) a <strong>computer program</strong> that specifies what the computer must do to perform the task, and (b) the <strong>computer</strong> that is to carry out the task.</p>
+                <h1 id="Review-Chap-8"><a href="#Review-Chap-8" class="headerlink" title="Review Chap 8"></a>Review Chap 8</h1><h3 id="Subroutines"><a href="#Subroutines" class="headerlink" title="Subroutines"></a>Subroutines</h3><p>It is almost always the case that collections of fragments to invoke the program are available to user programmers to free them from writing their own. These collections are referred to as libraries.</p>
+<p>In a library, a specified fragment can be invoked multiple times within the same program without having to specify its details. Such program fragments are called subroutines, or in C we call it functions.</p>
 <ul>
-<li>The <strong>instruction</strong> is the smallest piece of work specified in a computer program.</li>
-<li>John von Neumann proposed a fundamental model of a computer for processing computer programs in 1946. Here is it’s basic components:</li>
+<li>The Call&#x2F;Return Mechanism</li>
 </ul>
-<p><img src="/Review%20Chap%204%20db0804e57cb947bda974a470320dbd90/1692688049747.png" alt="1692688049747.png"></p>
+<p>It allows us to execute this one three-instruction sequence multiple times by requiring us to include it as a subroutine in our program only once.</p>
+<p>The programmer uses the call&#x2F;return mechanism to direct the computer each time via the call instruction to the code A, and after the computer has executed the code A, to the return instruction to the proper next instruction to be executed in the program.</p>
+<p>Two instructions will be needed: JSR(R) calls the subroutinue; and RET(JMP R7) to go back to the main program.</p>
 <ul>
-<li>Memory</li>
-</ul>
-<p>For nowadays computer: 2^34 by 8 bits.</p>
-<p>Addressability: 8 bits.</p>
-<p>Address space: 2^34.</p>
-<p>Each location has 34-bit address, for n bits can represent unique ly 2^n items.</p>
-<ul>
-<li>MAR and MDR</li>
-</ul>
-<p>To write (or store) a value in a memory location, we first write <strong>the address of the memory location</strong> in the <strong>MAR</strong> (memory’s address register), the value (interrogated from the computer’s memory) to be stored in the <strong>MDR</strong> (memory’s data register).这并不意味着 MDR 里存的不可能是个地址！</p>
-<p>The <strong>address of that location</strong> will be written to the (<strong>MAR</strong>) and then we <strong>interrogate the computer’s memory</strong>.</p>
-<p>The <strong>information stored</strong> in the location having that address will be placed in the <strong>m</strong>emory’s <strong>d</strong>ata <strong>r</strong>egister (<strong>MDR</strong>).</p>
-<ul>
-<li>Processing Unit</li>
-</ul>
-<p>The actual processing of information in the computer is carried out by the processing unit. The processing unit in a modern computer can consist of many sophisticated complex functional units, each performing one particular operation.</p>
-<p><strong>ALU:</strong> the simplest processing unit, is the abbreviation for Arithmetic and Logic Unit, which is capable of performing basic arithmetic functions and basic logic operations.</p>
-<p>In LC-3, ALU can perform ADD, AND, and NOT operations.</p>
-<ul>
-<li>Each ISA has its own word length, depending on the intended use of the computer.</li>
-<li>Most microprocessors today that are used in PCs or workstations have a word length of 64 bits (as is the case with Intel’s “Core” processors) or 32 bits (as is the case with Intel’s “Atom” processors). Even most microprocessors now used in cell phones have 64-bit word lengths, such as Apple’s A7 through A11 processors, and Qualcomm’s SnapDragon processors. However, the microprocessors used in very inexpensive applications often have word lengths of as little as 16 or even 8 bits.</li>
-<li>LC-3 has a word length of 16 bits.</li>
-<li>It is almost always the case that a computer provides some <strong>small amount of storage</strong> very close to the ALU to allow results to be <strong>temporarily stored</strong> if they will be needed to produce additional results <strong>in the near future</strong>. (They are important.)</li>
-<li>The most common form of temporary storage is a set of <strong>registers</strong>.</li>
-<li>Typically, the size of each register is identical to the size of values processed by the ALU; that is, they <strong>each contain one word</strong>.</li>
-<li>Current microprocessors typically contain 32 registers, each consisting of 32 or 64 bits, depending on the architecture.</li>
-<li>The LC-3 has eight registers (R0, R1, … R7), each containing 16 bits.</li>
-</ul>
-<p>也就是一般会涉及一些寄存器来存储计算的中间结果。</p>
-<ul>
-<li>Input and Output(好像不重要）</li>
-<li>Control Unit（it is like the conductor of an orchestra)</li>
-</ul>
-<p>The control unit has an instruction register to contain that instruction to keep track of which instruction is being executed. And to keep track of which instruction is to be happened next, the control unit has a register contains next instruction’s address, which is called program counter(PC).</p>
-<h1 id="The-LC-3-An-Example-von-Neumann-Machine"><a href="#The-LC-3-An-Example-von-Neumann-Machine" class="headerlink" title="The LC-3: An Example von Neumann Machine"></a>The LC-3: An Example von Neumann Machine</h1><p><img src="/Review%20Chap%204%20db0804e57cb947bda974a470320dbd90/Untitled.png" alt="Untitled"></p>
-<ul>
-<li><p>Two kinds of arrowheads:</p>
+<li><p>The JSR(R) instruction detailed</p>
+<p>  The instruction uses one of two addressing modes for computing the starting address of the subroutine, PC-relative addressing or Base Register addressing. The LC-3 assembly language provides two different mnemonic names for the opcode, JSR and JSRR, depending on which addressing mode is used.</p>
+<p>  The JSR (R) instruction does two things. Like all control instructions, it loads the PC, overwriting the incremented PC that was loaded during the FETCH phase of the JSR (R) instruction. In this case, the starting address of the subroutine is computed and loaded into the PC.</p>
+<p>  The second thing the JSR (R) instruction does is save the return address in R7. The return address is the incremented PC, which is the address of the instruction following the JSR (R) instruction in the calling program.</p>
 </li>
-<li><p>Filled-in: denote data elements that flow along the corresponding paths.</p>
-<p>  <img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657687710479-37d632d3-4794-4a2b-8330-c944922c689e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657687710479-37d632d3-4794-4a2b-8330-c944922c689e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_9%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
-</li>
-<li><p>Not-filled in: denote control signals that control the processing of the data elements.</p>
-<p>  <img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657687737528-a4ac7ebd-3c0b-4ec3-8f7a-22bd2aeb64c9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657687737528-a4ac7ebd-3c0b-4ec3-8f7a-22bd2aeb64c9.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_9%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
-<p>  <strong>MEMORY</strong> consists of the storage elements, along with the <strong>MAR</strong> for addressing individual locations and the <strong>MDR</strong> for holding the contents of a memory location on its way to&#x2F;from the sotrage.</p>
-<ul>
-<li>NOTE: the <strong>MAR</strong> and <strong>MDR</strong> each contains 16 bits, reflecting the fact that the memory address space of the LC-3 is 2^16 <strong>memory locations</strong> and the LC-3 is <strong>16-bit addressable</strong>.</li>
-</ul>
-<p>  <strong>INPUT&#x2F;OUTPUT</strong> consists of a keyboard and a monitor.</p>
-<ul>
-<li>The simplest keyboard requires two registers: a <strong>KBDR</strong> (<strong>k</strong>ey<strong>b</strong>oard <strong>d</strong>ata <strong>r</strong>egister) for holding the ASCII codes of keys struck and a <strong>KBSR</strong> (<strong>k</strong>ey<strong>b</strong>oard <strong>s</strong>tatus <strong>r</strong>egister) for maintaining status information about the keys struck.</li>
-<li>The simplest monitor requires two registers: a <strong>DDR</strong> (<strong>d</strong>isplay <strong>d</strong>ata <strong>r</strong>egister) for holding the ASCII code of something to be displayed on the screen and a <strong>DSR</strong> (<strong>d</strong>isplay <strong>s</strong>tatus <strong>r</strong>egister) for maintaining associated status information.</li>
-</ul>
-<p>  <strong>THE PROCESSING UNIT</strong> consists of a <strong>functional unit</strong> (<strong>ALU</strong> here) that performs arithmetic and logic operations and <strong>eight registers</strong> (R0, … R7) for storing temporary values that will be needed in the near future as operands for subsequent instructions.</p>
-<ul>
-<li>The LC-3 ALU can perform one <strong>arithmetic</strong> operation (<strong>addition</strong>) and two <strong>logical</strong> operations (<strong>bitwise AND</strong> and <strong>bitwise NOT</strong>).</li>
-</ul>
-<p>  <strong>THE CONTROL UNIT</strong> consists of all the structures needed to <strong>manage</strong> the processing that is carried out by the computer.</p>
-<ul>
-<li>Its most important structure is the <strong>finite state machine</strong>, which directs all the activity.</li>
-<li>Note the <strong>CLK</strong> input to the finite state machine. It specifies how long each clock cycle lasts.</li>
-<li>The <strong>IR</strong> (<strong>i</strong>nstruction <strong>r</strong>egister) is also an input to the finite state machine since the LC-3 instruction being processed determines what activities <strong>must</strong> be carried out.</li>
-<li>The <strong>PC</strong> (<strong>p</strong>rogram <strong>c</strong>ounter) is also a part of the control unit; it keeps track of the next instruction to be executed after the current instruction finishes.</li>
-<li>Note that all the external <strong>outputs</strong> of the <strong>finite state machine</strong> in the figure have arrowheads that are <strong>not filled in</strong>. These outputs <strong>control</strong> the <strong>processing</strong> throughout the computer.</li>
-<li>eg: <strong>ALUK</strong>: controls the <strong>operation</strong> performed in the <strong>ALU</strong> (<strong>ADD</strong>&#x2F;<strong>AND</strong>&#x2F;<strong>NOT</strong>) during the current clock cycle.</li>
-<li>eg: <strong>GateALU</strong>: determines whether or not the output of the ALU is provided to the <strong>processor bus</strong> during the current clock cycle.</li>
-<li>即有限元状态机的所有输出都非计算数据，而是用来控制各个元件，控制指令行为的。</li>
-</ul>
-<h1 id="Instruction-Processing"><a href="#Instruction-Processing" class="headerlink" title="Instruction Processing"></a>Instruction Processing</h1><p>  The central idea in the von Neumann model of computer processing is that the program and data are both stored as sequences of bits in the computer’s memory, and the program is executed one instruction at a time under the ditrection of the control unit.</p>
-<ul>
-<li>The instruction is made up of two parts, the opcode(what the instruction does) and the operands(who it does it to).</li>
-<li>Three kinds of instructions: <em>operates</em>, <em>data movement</em>, and <em>control</em>.</li>
-<li><strong>Operate</strong> instructions operate on data.</li>
-<li>LC-3 has three operate instructions: <strong>ADD</strong>&#x2F;<strong>AND</strong>&#x2F;<strong>NOT</strong></li>
-<li><strong>Data movement</strong> instructions move information from the processing unit to and from memory ****and to&#x2F;from input&#x2F;output devices.</li>
-<li>The LC-3 has six data movement instruction： <em><em>LD</em>&#x2F;ST</em>**.</li>
-<li><strong>Control</strong> instructions are necessary for altering the sequential processing of instructions. （比如指令间的跳转啥的）</li>
-<li>An LC-3 instruction consists of 16 bits (one word), numbered from left to right, bit [15] to bit [0].</li>
-<li><strong>Bits [15:12]</strong> contain the <strong>opcode</strong>. This means there are at most 16 distinct opcodes. Actually, we use only 15 of the possible four-bit codes. One is reserved for some future use.</li>
-<li><strong>Bits [11:0]</strong> are used to figure out <strong>where the operands are</strong>.</li>
-</ul>
-<p>  至于15个指令都是什么。。。我累了，翻appendix A看吧.</p>
+<li><p>Saving and Restoring Registers</p>
 </li>
 </ul>
-<p><img src="/Review%20Chap%204%20db0804e57cb947bda974a470320dbd90/Untitled%201.png" alt="Untitled"></p>
+<p>If a value in a register will be needed after something else is stored in that register, we must save it before something else happens and restore it before we can subsequently use it. We save a register value by storing it in memory; we restore it by loading it back into the register.</p>
+<p>The save&#x2F;restore problem can be handled either by the calling program before the JSR occurs or by the subroutine.</p>
+<p>In summary, we use the term “caller-save” if the calling program handles the save&#x2F;restore problem, and we use the term “callee-save” if the called program handles the problem. The appropriate one to handle the problem is the one that knows which registers will be destroyed by subsequent actions.</p>
+<h3 id="The-Stack"><a href="#The-Stack" class="headerlink" title="The Stack"></a>The Stack</h3><p>The stack is an abstract data type whose defining notion is that the last thing you stored in the stack is the first thing you remove from it. Simply, Last In, First Out, LIFO.</p>
+<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled.png" alt="Untitled"></p>
+<p>In a stack implemented in hardware, as each value is added or removed, <strong>all the other values already on the stack move.</strong></p>
 <ul>
-<li>The Instruction Cycle(Not the Clock Cycle!)</li>
+<li>Implementation in Memory</li>
 </ul>
-<p>The entire sequence of steps needed to process an instruction is called the <em>instruction cycle.</em></p>
-<p>Here are the six sequential phases of the instruction cycle:</p>
-<p><strong>FETCH</strong></p>
+<p>In the LC-3, R6 is the stack pointer.</p>
+<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled%201.png" alt="Untitled"></p>
+<p>These show the implementation in memory. Different from hardware,</p>
+<p>Figure 8.9a shows an initially empty stack. Since there are no values on the stack, the stack pointer contains the address x4000, which is the address of the memory location just after the memory locations reserved for the stack. This setup makes sense because as we will see through the code for pushing and popping values, the stack grows towards zero.</p>
+<p>Figure 8.9b illustrates the stack after pushing the value 18. Notice that the stack pointer now contains the address x3FFF, which becomes the new top of the stack.</p>
+<p>In Figure 8.9c, we can see the stack after pushing the values 31, 5, and 12 in that order. It is important to note that the values inserted into the stack are stored in memory locations with decreasing addresses, as the stack grows towards zero.</p>
+<p>Lastly, Figure 8.9d demonstrates the stack after popping the top two elements off the stack. The values 5 and 12, which were popped, are still present in memory locations x3FFD and x3FFC, respectively. However, these values cannot be accessed from memory as long as every access to memory is controlled by the stack mechanism.</p>
+<p>Unlike the coin holder and computer hardware stack implementations discussed in the previous section, when values are pushed and popped to and from a stack implemented in sequential memory locations, the data already stored on the stack does not physically move.</p>
 <ul>
-<li>The FETCH phase obtains the next instruction from memory and loads it into the <strong>IR</strong> (instruction register) of the control unit.</li>
-<li>The <strong>PC</strong> contains the address of the next instruction to be processed.</li>
-<li>So the FETCH do the following things:</li>
-<li>Load the MAR with the contents of the PC, and simultaneously <strong>increment</strong> the <strong>PC</strong>. <em>[one clock cycle]</em></li>
-<li>Interrogate memory, resulting in the instruction being placed in the MDR. <em>[one clock cycle or more]</em></li>
-<li>Load the IR with the contents of the MDR. <em>[one clock cycle]</em></li>
-<li>Each of these steps is under the direction of the <strong>control unit</strong>.</li>
-<li>获取指令数据，并更新控制模块。</li>
+<li>Underflow and Overflow</li>
 </ul>
-<p><strong>DECODE</strong></p>
+<ol>
+<li>Underflow: Underflow happens when an attempt is made to pop a value from an empty stack. In other words, the stack is already empty, but a pop operation is requested. This results in an error condition because there are no values to retrieve from the stack. It is important to check for underflow conditions before performing a pop operation to avoid data loss or program malfunction.</li>
+<li>Overflow: Overflow occurs when an attempt is made to push a value onto a stack that is already full. In LC-3, the stack is implemented within a defined region of memory with a fixed size. When the stack becomes full and additional values need to be pushed onto it, an overflow condition arises. This can lead to data corruption or unpredictable behavior in the program. It is crucial to monitor the stack usage and prevent overflow situations by appropriately managing the stack size or implementing error handling mechanisms.</li>
+</ol>
+<p>Both underflow and overflow conditions can be detected by monitoring the stack pointer and checking its position relative to the stack boundaries. Handling these scenarios effectively is essential to ensure the proper functioning and integrity of programs using the LC-3 stack.</p>
+<p>Here are a complete picture, from which you can detect the way to avoid underflow and overflow.</p>
+<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled%202.png" alt="Untitled"></p>
+<h3 id="Recursion-a-Powerful-Technique-When-Used-Appopriately"><a href="#Recursion-a-Powerful-Technique-When-Used-Appopriately" class="headerlink" title="Recursion, a Powerful Technique When Used Appopriately"></a>Recursion, a Powerful Technique When Used Appopriately</h3><p>Recursion is a mechanism for expressing a function in terms of itself.</p>
+<p>Good Example：a maze</p>
+<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled%203.png" alt="Untitled"></p>
+<h3 id="The-Queue"><a href="#The-Queue" class="headerlink" title="The Queue"></a>The Queue</h3><p>Unlike the stack, it is FIFO(first in first out). This means we need to keep track of two ends of the storage structure: a FRONT pointer for servicing and a REAR pointer for entering. Here are an example.</p>
+<p><img src="/Review%20Chap%208%204f43e889765545ecb6d7554902d57891/Untitled%204.png" alt="Untitled"></p>
+<p>The basic operations: Remove from front, Insert at rear.</p>
+<p>Wrap-Around: It works by having our removal and insertion algorithms test the contents of FRONT and REAR for the value x8005. If we wish to insert, and REAR contains x8005, we know we have reached the end of our available storage and we must see if x8000 is available. If we wish to remove, we must see if FRONT contains the address x8005. If it does, the front of the queue is in x8000.</p>
 <ul>
-<li>The DECODE phase examines the instruction in order to figure out what the microarchitecture is being asked to do.</li>
-<li>依据 opcode 进行路由，找到接下来要做什么。</li>
+<li><strong>NOTE:</strong> We cannot let the empty queue and the full queue look the same, What should we do?</li>
 </ul>
-<p><strong>EVALUATE ADDRESS</strong></p>
-<ul>
-<li>This phase computes the address of the memory location that is needed to process the instruction.</li>
-<li>For instructions that needn’t deal with an address (such as ADD with bits [5] &#x3D; 0), the EVALUATE ADDRESS phase is not needed.</li>
-<li>对于部分指令，它们涉及一个需要计算才能得到的地址，而这个计算过程就是在这一部执行。</li>
-</ul>
-<p><strong>FETCH OPERANDS</strong></p>
-<ul>
-<li>This phase obtains the source operands needed to process the instruction.</li>
-</ul>
-<p><strong>EXECUTE</strong></p>
-<ul>
-<li>This phase carries out the execution of the instruction.</li>
-</ul>
-<p><strong>STORE RESULT</strong></p>
-<ul>
-<li>The final phase of an instruction’s execution. The result is written to its designated destination.</li>
-<li>Not all instructions require all six phases.</li>
-</ul>
-<p><strong>Control of the Instruction Cycle</strong></p>
-<ul>
-<li>The instruction cycle is controlled by a synchronous finite state machine.</li>
-</ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657770087716-bcd10ab5-5c28-45ea-af94-981a5407dbac.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_SXNzaGlraeS_ri3or63pm4A=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="https://cdn.nlark.com/yuque/0/2022/png/22387144/1657770087716-bcd10ab5-5c28-45ea-af94-981a5407dbac.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_23%2Ctext_SXNzaGlraeS_ri3or63pm4A%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10"></p>
-<ul>
-<li><strong>Halting</strong> the Computer (the <strong>TRAP</strong> Instruction)</li>
-</ul>
-<p><img src="/Review%20Chap%204%20db0804e57cb947bda974a470320dbd90/Untitled%202.png" alt="Untitled"></p>
-<ul>
-<li>If we need to stop this potentially infinite sequence of instruction cycles, we should stop the <strong>clock</strong>.</li>
-<li>就是通过自陷来委托计算机进行一些用户权限无法完成的事情。类似于将某些涉及到底层的行为封装起来，来增加安全性。</li>
-<li>In the LC-3, as in many other machines, it is done under control of the operating system. For now it is enough to know that if a user program requires help from the operating system, it requests that help with the <strong>TRAP</strong> instruction (opcode &#x3D; 1111) and an eight-bit code called a <strong>trap vector</strong>, which identifies the help that the user program needs. The eight-bit code <strong>x25</strong> tells the operating system that the program has finished executing and the computer can stop processing instructions.</li>
-</ul>
-
+<p>Our answer is to allow the queue to store only n-1 elements if space for n elements has been allocated. That means, if inserting a nth element into the queue would cause FRONT to equal REAR, we do not allow that insertion. We declare the queue full when there are n-1 elements in the queue.</p>
+<p>If the queue is empty, FRONT&#x3D;REAR.</p>
+<p>Test of UNDERFLOW: just test if R3&#x3D;R4. If so, it means it is already empty.</p>
+<p>Test of OVERFLOW: similarly, just add 1 to the REAR, if R3&#x3D;R4, it means it is already full.</p>
+<h3 id="Character-Strings-Omit"><a href="#Character-Strings-Omit" class="headerlink" title="Character Strings(Omit)"></a>Character Strings(Omit)</h3>
                 
             </div>
             <hr/>
@@ -818,6 +731,28 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk5NC8zNjQ1Nw==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
 
@@ -834,13 +769,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/11/Review%20Chap%205%20ddcbb3165ab44277adc7d7cbc629f81c/">
+                <a href="/2023/11/28/review-chap-9-4e7fd7f41df64af38e6bea1c5827e4ec/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="ICS 2023 Review Chap 5">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="ICS 2023 Review Chap 9">
                         
-                        <span class="card-title">ICS 2023 Review Chap 5</span>
+                        <span class="card-title">ICS 2023 Review Chap 9</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -851,7 +786,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-28
                         </span>
                         <span class="publish-author">
                             
@@ -887,13 +822,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/05/Review%20Chap%203%20d0d116bbfd7a4a57bb62227c9d2c6bc8/">
+                <a href="/2023/11/14/review-chap-6-7-e66b76be92614538a66fb9a1d93b9783/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ICS 2023 Review Chap 3">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ICS 2023 Review Chap 6&amp;7">
                         
-                        <span class="card-title">ICS 2023 Review Chap 3</span>
+                        <span class="card-title">ICS 2023 Review Chap 6&amp;7</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -904,7 +839,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
                             </span>
                         <span class="publish-author">
                             
@@ -1175,11 +1110,6 @@
                     class="white-color"></span>&nbsp;次
             </span>
             
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
             
             <br>
             

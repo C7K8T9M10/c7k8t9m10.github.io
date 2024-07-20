@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="欢迎页, Eddie Wong">
+    <meta name="keywords" content="ICS 2023 Review Chap 2, Eddie Wong">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>欢迎页 | Eddie Wong</title>
+    <title>ICS 2023 Review Chap 2 | Eddie Wong</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">欢迎页</h1>
+                    <h1 class="description center-align post-title">ICS 2023 Review Chap 2</h1>
                 </div>
             </div>
         </div>
@@ -431,14 +431,27 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Welcome/">
-                                <span class="chip bg-color">Welcome</span>
+                            <a href="/tags/ICS/">
+                                <span class="chip bg-color">ICS</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                                <span class="chip bg-color">计算机系统概论</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                课程笔记
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -447,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-01
+                    2023-11-03
                 </div>
                 
 
@@ -456,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    94
+                    817
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -483,7 +496,83 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="First-Time-Using-Hexo"><a href="#First-Time-Using-Hexo" class="headerlink" title="First Time Using Hexo"></a>First Time Using Hexo</h1><p>It’s a good thing to put something here.<br>了解我的人大概知道我是有一定的表达欲望的，所以个人网站给了我一个很好的机会去多啰嗦两句，nice。<br>这是另一个欢迎页，欢迎你们随时来看看我能搞出点什么名堂，不过不要对我有非常大的期望。</p>
+                <h1 id="Review-Chap-2"><a href="#Review-Chap-2" class="headerlink" title="Review Chap 2"></a>Review Chap 2</h1><ul>
+<li><p>Bits: We represent the presence of voltages as “1” and the absence of a voltage as “0”. We refer to each 0 and each 1 as a “bit”, which is shortened from binary digit.</p>
+</li>
+<li><p>Precisely, the electronic circuits in the computer differentiate voltages close to 0 from voltages far from 0.</p>
+</li>
+<li><p>With <em>k</em> bits, we can distinguish 2^k distinct items at most.</p>
+</li>
+<li><p>Data Types: 1. 2’s complement integers for representing positive and negative integers that we wish to perform arithmetic on, 2. ASCII codes for representing characters that we wish to input to a computer via the keyboard or output from the computer via a monitor(These are two data types which will be used in following chapters)</p>
+</li>
+<li><p>Integer data types</p>
+<ol>
+<li>Unsigned Integers.（我寻思着这玩意我还是会的）with k bits,we can represent 2^k integers,ranging from 0 to 2^k -1.</li>
+<li>Signed Integers. （用中文）正数以0为先导，负数以1为先导，with k bits,we can represent 2^k -1 integers,ranging from - 2^（k -1）-1 to 2^（k -1）-1. 但是出现了-0（如在五位当中，10000表示-0而00000表示0，这就尴尬了）</li>
+<li>1’s complement integers（反码，似乎不重要）</li>
+<li>2’s complement integers （补码，很重要，一会展开讲）</li>
+</ol>
+<p>  <img src="/Review%20Chap%202%2044ab637553b3440d9a08155cb4dc336a/Untitled.png" alt="Untitled">
+  </p>
+</li>
+<li><p>关于补码的引入，书中从底层实现的角度给出了解释，进行归纳的话我认为主要是这两个因素：① 2’s complement 中“溢出”与“取模”的关系；② ALU 模块只进行加法运算，而不能进行减法运算；（需要注意的是，所谓的符号位是给人看的，或者说只是一个特征。在实际过程中并不存在“符号位”，即该位也参与加法计算）</p>
+</li>
+</ul>
+<aside>
+💡 ALU : arithmetic and logic unit, which is very important in future study.
+
+</aside>
+
+<p>我觉得二进制加法我还不至于不会，这里省了。</p>
+<ul>
+<li><p>Conversion  Binary to Decimal</p>
+<ol>
+<li>examine the leading bit b7 to determine whether it is positive or negative.If it is negative, do step 2 after flipping all the bits and adding 1.</li>
+<li>then simply: b6 *2^6+b5 *2^5+…+b0 *2^0</li>
+<li>get the result, then if it is negative, don’t forget the minus sign.</li>
+</ol>
+</li>
+<li><p>Conversion Decimal to Binary</p>
+<ol>
+<li>obtain the binary representation of the magnitude of N by forming the equation N&#x3D;b6⋅2^6+b5⋅2^5+…+b0⋅2^0.  and repeating and following,until the left side of the equation is 0: a.If N is odd,the rightmost bit is 1.If N is even,the rightmost bit is 0.<br>  b.Subtract 1 or 0(according to whether N is odd or even)from N,remove<br>  the least signiﬁcant term from the right side,and divide both side sof<br>  the equation by 2.</li>
+<li>if it is positive, add a leading 0 then finished.</li>
+<li>if it is negative, add a leading 0 and then form the negative of this 2’s complement representation, and then you are done.</li>
+</ol>
+</li>
+<li><p>Specially for floating point data type</p>
+<ul>
+<li>1 bit for the sign (positive or negative)</li>
+<li>8 bits for the range (the exponent field)</li>
+<li>23 bits for precision (the fraction field)  数据部分，但是组织形式有一些微妙，“第一位”是<code>0</code>还是<code>1</code>有特殊的处理方式</li>
+</ul>
+<p>  <img src="/Review%20Chap%202%2044ab637553b3440d9a08155cb4dc336a/Untitled%201.png" alt="Untitled"></p>
+  <aside>
+  💡 The 32-bit floating point data type
+  
+  </aside>
+  
+<ul>
+<li><p>They are mostly in normalized form: (不需要考虑补码）</p>
+<p>  <img src="https://cdn.nlark.com/yuque/__latex/037c64c8fbf18f1fa3486b7f549ebb4b.svg" alt="https://cdn.nlark.com/yuque/__latex/037c64c8fbf18f1fa3486b7f549ebb4b.svg"></p>
+</li>
+</ul>
+</li>
+<li><p>exponent&#x3D;00000000——subnormal numbers</p>
+</li>
+<li><p>exponent&#x3D;11111111——infinity</p>
+</li>
+<li><p>Sign-extension (<strong>SEXT</strong>)</p>
+</li>
+<li><p>The value of a <strong>positive number</strong> does <strong>not change</strong> if we <strong>extend</strong> the sign bit <strong>0</strong> as many bit positions <strong>to the left</strong> as desired. Similarly, the value of a <strong>negative number</strong> does <strong>not change</strong> by <strong>extending</strong> the sign bit <strong>1</strong> as many bit positions <strong>to the left</strong> as desired.</p>
+</li>
+<li><p>也就是说按照符号位向高位扩展，且这种扩展是不会影响原来的值的。</p>
+</li>
+<li><p>Overflow</p>
+</li>
+<li><p>最高位（比如符号位）进位后不会创建一个更高位来存储这个进位信息，而是直接丢弃这个进位，也就是“溢出”，在数学层面来看，就类似于取模，比如，对应<code>1110</code> + <code>1001</code> &#x3D; <code>~~1~~0111</code>。</p>
+<p>  <img src="https://cdn.nlark.com/yuque/__latex/5b8307da33e4ddcbecd7ca8925c4aaca.svg" alt="https://cdn.nlark.com/yuque/__latex/5b8307da33e4ddcbecd7ca8925c4aaca.svg"></p>
+</li>
+</ul>
 
                 
             </div>
@@ -498,8 +587,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Welcome/">
-                                    <span class="chip bg-color">Welcome</span>
+                                <a href="/tags/ICS/">
+                                    <span class="chip bg-color">ICS</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                                    <span class="chip bg-color">计算机系统概论</span>
                                 </a>
                             
                         </div>
@@ -657,6 +750,28 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTk5NC8zNjQ1Nw==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
 
@@ -673,31 +788,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/07/02/First%20Year%20Summary/">
+                <a href="/2023/11/05/review-chap-3-d0d116bbfd7a4a57bb62227c9d2c6bc8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="大学第一年对自己的一些总结（2023.07）">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ICS 2023 Review Chap 3">
                         
-                        <span class="card-title">大学第一年对自己的一些总结（2023.07）</span>
+                        <span class="card-title">ICS 2023 Review Chap 3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            我并不成功但不认为非常失败的大学第一年！
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-05
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    随笔
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    课程笔记
                                 </a>
                             
                             
@@ -707,12 +822,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">大学生活</span>
+                    <a href="/tags/ICS/">
+                        <span class="chip bg-color">ICS</span>
                     </a>
                     
-                    <a href="/tags/%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">总结</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                        <span class="chip bg-color">计算机系统概论</span>
                     </a>
                     
                 </div>
@@ -723,42 +838,49 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/01/First%20Blog/">
+                <a href="/2023/11/02/ics-2023-88cec008ce4942edba428dc0868292e0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="欢迎页">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="ICS 2023">
                         
-                        <span class="card-title">欢迎页</span>
+                        <span class="card-title">ICS 2023</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            欢迎
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Eddie Wong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    课程笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Welcome/">
-                        <span class="chip bg-color">Welcome</span>
+                    <a href="/tags/ICS/">
+                        <span class="chip bg-color">ICS</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/">
+                        <span class="chip bg-color">计算机系统概论</span>
                     </a>
                     
                 </div>
@@ -1007,11 +1129,6 @@
                     class="white-color"></span>&nbsp;次
             </span>
             
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
             
             <br>
             
